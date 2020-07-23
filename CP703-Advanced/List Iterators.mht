@@ -1,0 +1,50 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: List Iterators
+Date: Wed, 17 Aug 2005 20:36:56 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/jstraub/dsa/slides/Iterators/300ListIterators.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>List Iterators</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2722" name=3DGENERATOR></HEAD>
+<BODY>
+<P><FONT size=3D-1><B>C Programming: Data Structures</B> </FONT>
+<BLOCKQUOTE>
+  <P><FONT size=3D+2>
+  <CENTER><U>List Iterators</U></CENTER>
+  <P>Within our list module, an iterator will be:=20
+  <UL>
+    <LI>bidirectional=20
+    <LI>read/write </LI></UL>
+  <P>The type of an iterator will be <I>LIST_ITER_ID_t,</I> an =
+incomplete type.=20
+  <P>Any two iterators to the same list will be comparable for equality. =
+
+  <P>A change to the size of a list will <I>not</I> invalidate any =
+iterator=20
+  except for an iterator that points to an item that has been removed =
+from the=20
+  list.=20
+  <P>Note that list iterators are not random access, and cannot be =
+compared for=20
+  magnitude.=20
+  <UL></UL></BLOCKQUOTE></FONT>
+<P><FONT size=3D-1><B>Iterators<B> </FONT><!-- browser trailer start -->
+<HR>
+
+<CENTER>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/250Vec=
+torExample.html">=20
+prev </A>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/all.ht=
+ml">=20
+index </A>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/310Lis=
+tIterators.html">=20
+next </A></CENTER><!-- browser trailer end --></B></B></BODY></HTML>

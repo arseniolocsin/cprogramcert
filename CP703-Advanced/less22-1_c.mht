@@ -1,0 +1,178 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less22-1.c.html
+Date: Wed, 25 May 2005 17:11:58 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less22-1.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less22-1.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE: less22-1.c</FONT>
+<FONT color=3D#80a0ff> * Description: program to set and test =
+bits</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> these must be =
+powers of 2 (1,2,4,...) </FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#define STATIC   (</FONT><FONT =
+color=3D#ff80ff>0</FONT><FONT color=3D#ffa0a0>2</FONT><FONT =
+color=3D#ff80ff>)  </FONT><FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> second bit for static </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#define EXTERNAL (</FONT><FONT =
+color=3D#ff80ff>0</FONT><FONT color=3D#ffa0a0>4</FONT><FONT =
+color=3D#ff80ff>)  </FONT><FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> third bit for external </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    <FONT color=3D#60ff60>unsigned</FONT> <FONT =
+color=3D#60ff60>int</FONT> flag =3D <FONT color=3D#ffa0a0>0</FONT>;
+
+  <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>   * flag | EXTERNAL</FONT>
+<FONT color=3D#80a0ff>   *</FONT>
+<FONT color=3D#80a0ff>   *    0000</FONT>
+<FONT color=3D#80a0ff>   *  | 0100</FONT>
+<FONT color=3D#80a0ff>   *  ------</FONT>
+<FONT color=3D#80a0ff>   *    0100</FONT>
+<FONT color=3D#80a0ff>   </FONT><FONT color=3D#80a0ff>*/</FONT>
+    flag |=3D EXTERNAL;                <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> turns EXTERNAL bit on =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+  <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>   * flag &amp; EXTERNAL</FONT>
+<FONT color=3D#80a0ff>   *</FONT>
+<FONT color=3D#80a0ff>   *    0100</FONT>
+<FONT color=3D#80a0ff>   *  &amp; 0100</FONT>
+<FONT color=3D#80a0ff>   *  ------</FONT>
+<FONT color=3D#80a0ff>   *    0100</FONT>
+<FONT color=3D#80a0ff>   </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#ffff00>if</FONT> ( (flag &amp; EXTERNAL) !=3D <FONT =
+color=3D#ffa0a0>0</FONT> )    <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> TRUE if EXTERNAL bit set </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+        puts( <FONT color=3D#ffa0a0>"EXTERNAL flag is set</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT> );
+
+   <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>    * flag &amp; ~(EXTERNAL)</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    * ~(EXTERNAL) --&gt; ~(0100) --&gt; =
+(1011)</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    *   0100</FONT>
+<FONT color=3D#80a0ff>    * &amp; 1011</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0000</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    flag &amp;=3D ~(EXTERNAL);                <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> turns EXTERNAL bit off =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+   <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>    * flag &amp; EXTERNAL</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    * ~(EXTERNAL) --&gt; ~(0100) --&gt; =
+(1011)</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    *   0100</FONT>
+<FONT color=3D#80a0ff>    * &amp; 1011</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0000</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#ffff00>if</FONT> ( (flag &amp; EXTERNAL) =3D=3D <FONT =
+color=3D#ffa0a0>0</FONT> )       <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> TRUE if EXTERNAL bit off </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+        puts( <FONT color=3D#ffa0a0>"EXTERNAL flag is off</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT> );
+
+   <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>    * flag |=3D EXTERNAL | STATIC</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    *   0100</FONT>
+<FONT color=3D#80a0ff>    * | 0010</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0110</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    flag |=3D EXTERNAL | STATIC;          <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> turns EXTERNAL and =
+STATIC bits on </FONT><FONT color=3D#80a0ff>*/</FONT>
+
+   <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> </FONT>
+<FONT color=3D#80a0ff>    *  flag &amp; EXTERNAL | STATIC </FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    *   0110    flag</FONT>
+<FONT color=3D#80a0ff>    * &amp; 0100    EXTERNAL</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0100</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    *   0100    flag &amp; EXTERNAL</FONT>
+<FONT color=3D#80a0ff>    * | 0010    STATIC</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0110</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#ffff00>if</FONT> ( ( flag &amp; (EXTERNAL | STATIC) ) =
+!=3D <FONT color=3D#ffa0a0>0</FONT> )    <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> TRUE if either bit is on =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+        puts( <FONT color=3D#ffa0a0>"EXTERNAL or STATIC bit =
+set</FONT><FONT color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT> =
+);
+
+   <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> </FONT>
+<FONT color=3D#80a0ff>    * flag &amp; ~(EXTERNAL | STATIC)</FONT>
+<FONT color=3D#80a0ff>    * </FONT>
+<FONT color=3D#80a0ff>    *   0100</FONT>
+<FONT color=3D#80a0ff>    * | 0010</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0110 --&gt; ~(0110) --&gt; 1001</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    *   1001</FONT>
+<FONT color=3D#80a0ff>    * &amp; 0110</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0000</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    flag &amp;=3D ~( EXTERNAL | STATIC );              <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> turn them off =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+   <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>    * flag &amp; EXTERNAL &amp; STATIC</FONT>
+<FONT color=3D#80a0ff>    *</FONT>
+<FONT color=3D#80a0ff>    *   0100</FONT>
+<FONT color=3D#80a0ff>    * &amp; 0010</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0110</FONT>
+<FONT color=3D#80a0ff>    *  </FONT>
+<FONT color=3D#80a0ff>    *   0000</FONT>
+<FONT color=3D#80a0ff>    * &amp; 0110</FONT>
+<FONT color=3D#80a0ff>    * ------</FONT>
+<FONT color=3D#80a0ff>    *   0000</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#ffff00>if</FONT> ( (flag &amp; (EXTERNAL &amp; STATIC =
+)) =3D=3D <FONT color=3D#ffa0a0>0</FONT> )         <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> TRUE if both bits off =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+        puts( <FONT color=3D#ffa0a0>"both flags off"</FONT> );
+
+}
+</PRE></BODY></HTML>

@@ -1,0 +1,39 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Iterators
+Date: Wed, 17 Aug 2005 20:14:18 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/jstraub/dsa/slides/Iterators/100Reference.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Iterators</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2722" name=3DGENERATOR></HEAD>
+<BODY>
+<P><FONT size=3D-1><B>C Programming: Data Structures</B> </FONT>
+<BLOCKQUOTE>
+  <P><FONT size=3D+2>
+  <CENTER><U>Iterators</U></CENTER>
+  <P>While the general concept of an <I>iterator</I> is not specific to =
+any one=20
+  language or facility, the details of the following discussion are =
+modeled=20
+  closely after concepts used in the C++ Standard Template Library (the=20
+  <I>STL</I>). See, for example, <A =
+href=3D"http://www.sgi.com/tech/stl/">SGI's=20
+  STL documentation. </A></P></BLOCKQUOTE></FONT>
+<P><FONT size=3D-1><B>Iterators</B> </FONT><!-- browser trailer start =
+-->
+<HR>
+
+<CENTER>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/all.ht=
+ml">=20
+index </A>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/110Int=
+roduction.html">=20
+next </A></CENTER><!-- browser trailer end --></BODY></HTML>

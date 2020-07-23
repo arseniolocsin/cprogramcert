@@ -1,0 +1,28 @@
+********************
+Testing parse_strtok
+********************
+Success parsed >>123.456        some-number-name<< to >>some-number-name<< and 123.456000
+Success parsed >>  314.159        pi*100<< to >>pi*100<< and 314.159000
+Success parsed >>314159         pi*100000<< to >>pi*100000<< and 314159.000000
+Success parsed >>0.314159       pi/10<< to >>pi/10<< and 0.314159
+Success parsed >>123.45         123.45  << to >>123.45<< and 123.450000
+Success parsed >>314.159        pi*100  << to >>pi*100<< and 314.159000
+Success parsed >>-123.456       a-neg-number << to >>a-neg-number<< and -123.456000
+Success parsed >>123.456        some-really-long-name-string<< to >>some-really-long-nam<< and 123.456000
+Success parsed >>3.1.4159       pi<< to >>pi<< and 3.100000
+Success parsed >>499.999        some-number    299.999  extra << to >>some-number<< and 499.999000
+********************
+Testing parse_sscanf
+********************
+Success parsed >>123.456        some-number-name<< to >>some-number-name<< and 0.000000
+Success parsed >>  314.159        pi*100<< to >>pi*100<< and 0.000000
+Success parsed >>314159         pi*100000<< to >>pi*100000<< and 0.000000
+Success parsed >>0.314159       pi/10<< to >>pi/10<< and 0.000000
+Success parsed >>123.45         123.45  << to >>123.45<< and 0.000000
+Success parsed >>314.159        pi*100  << to >>pi*100<< and 0.000000
+Success parsed >>-123.456       a-neg-number << to >>a-neg-number<< and 0.000000
+Success parsed >>0.0            zero-number<< to >>zero-number<< and 0.000000
+Success parsed >>0              another-zero<< to >>another-zero<< and 0.000000
+Success parsed >>123.456        some-really-long-name-string<< to >>some-really-long-nam<< and 0.000000
+Success parsed >>3.1.4159       pi<< to >>.4159<< and 0.000000
+Success parsed >>499.999        some-number    299.999  extra << to >>some-number<< and 0.000000

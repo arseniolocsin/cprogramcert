@@ -1,0 +1,950 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:st1="urn:schemas-microsoft-com:office:smarttags" xmlns="http://www.w3.org/TR/REC-html40"><head>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 11">
+<meta name="Originator" content="Microsoft Word 11">
+<link rel="File-List" href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/INDEX_files/filelist.xml">
+<link rel="Edit-Time-Data" href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/INDEX_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Introduction to C Programming: CP701</title>
+<o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="place"></o:smarttagtype>
+<o:smarttagtype namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="City"></o:smarttagtype>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:14.0pt;
+	font-family:Arial;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="3074"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<script charset="utf-8" id="injection_graph_func" src="INDEX_files/injection_graph_func.js"></script><script id="_nameHighlight_injection"></script><link class="skype_name_highlight_style" href="INDEX_files/injection_nh_graph.css" type="text/css" rel="stylesheet" charset="utf-8" id="_injection_graph_nh_css"><link href="INDEX_files/skypeplugin_dropdownmenu.css" type="text/css" rel="stylesheet" charset="utf-8" id="_skypeplugin_dropdownmenu_css"></head><body style="" bgcolor="white" vlink="blue" lang="EN-US" link="blue">
+
+<div class="Section1">
+
+<h1 style="text-align: center;" align="center"><img id="_x0000_i1025" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cheader.jpg" width="500" height="101"></h1>
+
+<h2 style="text-align: center;" align="center"><strong><span style="font-family: Arial;">UW Educational Outreach</span></strong></h2>
+
+<p style="text-align: center;" align="center"><b>Instructor: David Nielsen. Email: <a href="mailto:david.nielsen@siemens.com">david.nielsen@siemens.com</a> Phone:
+(425) 557-1269</b></p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<p>Free Visual Studio 2008 for students<span class="GramE">:</span><a href="https://downloads.channel8.msdn.com/">https://downloads.channel8.msdn.com/</a></p>
+
+<p>Class Textbook: The Waite Group's "C Primer Plus" Fifth Edition,
+by Stephen <span class="SpellE">Prata</span>, published by SAMS, ISBN 0672326965</p>
+
+<p>Recommended class text: Code Complete by Steve McConnell, published by
+Microsoft Press, ISBN 0735619670. Note that there are two editions of this
+book. I have posted the chapters numbers for both editions in the reading
+assignments. If you are using the 1st edition use the chapters listed first in
+the assignments. If you are using the 2nd edition use the chapters listed in
+parenthesis.</p>
+
+<p>The lecture notes are available in PDF format. To read PDF files you need
+Adobe Acrobat. Acrobat can be downloaded for free from <a href="http://www.adobe.com/">http://www.adobe.com</a>.</p>
+
+<p>If you work on a Windows PC these <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/hints.pdf">hints<span style="text-decoration: none;"><img id="_x0000_i1027" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a> may be helpful.</p>
+
+<p>Homework assignments are from the class text: The Waite Group's "C
+Primer Plus" Fourth Edition, by Stephen <span class="SpellE">Prata</span>,
+unless otherwise specified.</p>
+
+<p>Here is a free C/C++ compiler for Intel 80386 and higher PCs: <a href="http://www.delorie.com/djgpp/">http://www.delorie.com/djgpp/</a>. Note: I
+have not used this compiler but it was recommended by other C instructors.</p>
+
+<p>For answers to administrative UWEO or administrative questions such as those
+the course fees or registration please consult the online student handbook: <a href="http://www.extension.washington.edu/ext/studentinfo/onsite_credit_2003.pdf">http://www.extension.washington.edu/ext/studentinfo/onsite_credit_2003.pdf</a>.
+You can find other UWEO information at <a href="http://www.extension.washington.edu/">http://www.extension.washington.edu</a>.</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3>Dec 16th Final Exam<o:p></o:p></h3>
+
+<p style="margin: 5pt 36pt;"><!--Solution to Final: <a href="CP701FinalExamSolution.pdf">
+CP701FinalExamSolution.pdf</a>-->The
+final focuses on arrays, pointers, strings, characters, pass by value, and pass
+by reference, but knowledge of topics covered in the first half of the class is
+required.</p>
+
+<p style="margin: 5pt 36pt;">Final is open book and open note.</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3>December 9th<o:p></o:p></h3>
+
+<p style="margin: 5pt 36pt;"><!--Homework solution: <a href="hw8.c">hw8.c</a>-->Program example from
+class: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/main.c"><span class="SpellE">main.c</span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Test.h"><span class="SpellE">Test.h</span></a></p>
+
+<p style="margin: 5pt 36pt;">Topics: Programming Style, Multi-File Compilation</p>
+
+<p style="margin: 5pt 36pt;">Lecture <span class="GramE">notes :</span> <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture9.pdf">Programming
+Style<span style="text-decoration: none;"><img id="_x0000_i1030" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture09.ppt">Programming Style
+(PowerPoint)</a></p>
+
+<p style="margin: 5pt 36pt;"><st1:place w:st="on"><st1:city w:st="on">Reading</st1:city></st1:place>:
+Code Complete Chapters 23 "The Software Quality Landscape" and 24
+"Reviews" (2nd <span class="SpellE"><span class="GramE">ed</span></span>
+Chapters 20, 21)</p>
+
+<p style="margin: 5pt 36pt;">Source .c and .h files for multi-file compilation example shown in
+class:</p>
+
+<p style="margin: 5pt 36pt;"><a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/main.c"><span class="SpellE">main.c</span></a> <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/printText.c"><span class="SpellE">printText.c</span></a> <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/globals.c"><span class="SpellE">globals.c</span></a> <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/globals.h"><span class="SpellE">globals.h</span></a>
+<a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/printText.h"><span class="SpellE">printText.h</span></a></p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment:</span></strong>
+None</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3>December 2<sup>nd</sup></h3>
+
+<p style="margin: 5pt 36pt;">Lecture notes : Singly Linked Lists</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment:</span></strong>
+TBD</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework Due: </span></strong>December 9th</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3>No class - Nov 25th (Thanksgiving break)</h3>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3>November 18th</h3>
+
+<p style="margin: 5pt 36pt;">Program example from class: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/charstr.c"><span class="SpellE">charstr.c</span></a><o:p></o:p></p>
+
+<p style="margin: 5pt 36pt;"><!--
+Homework solution: <a href="Hw7.c">Hw7.c</a></p>
+<p style="margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+
+.5in">
+Stack example from class: <a href="stackSolution2.c">stackSolution2.c</a></p>
+<p style="margin-top:5.0pt;margin-right:.5in;margin-bottom:5.0pt;margin-left:
+
+.5in">
+String example from class: <a href="strings.c">strings.c</a>-->Lecture
+<span class="GramE">notes :</span> <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture8.pdf">Characters and Strings<span style="text-decoration: none;"><img id="_x0000_i1034" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture08.ppt">Characters and
+Strings (PowerPoint)</a></p>
+
+<p style="margin: 5pt 36pt;"><st1:city w:st="on"><st1:place w:st="on">Reading</st1:place></st1:city>:
+<span class="SpellE">Prata</span> Chapter 4, Chapter 8, and Chapter 11. Code
+Complete 11.4 "Fundamental Data Types: Characters and Strings"</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment:</span></strong></p>
+
+<p style="margin: 5pt 36pt;">Chapter 4, Review Question 5. Suppose a program starts like this:</p>
+
+<pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>#define BOOK "War and Peace"</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span><span class="SpellE">int</span> main(void)</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>{</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>float cost = 12.99;</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>float percent = 80.0;</pre>
+
+<p style="margin: 5pt 36pt;">Construct
+a <span class="SpellE">printf</span>() program that uses BOOK, cost, and percent
+to print the following:</p>
+
+<p style="margin: 5pt 36pt;">This
+copy of "War and Peace" sells for $12.99.<br>
+That is 80% of list.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+4, Programming Exercise 2. Write a program that requests your first name and
+does the following with it:</p>
+
+<p style="margin: 5pt 72pt;">a.
+Prints it enclosed in double quotation marks.<br clear="right">
+b. Prints it in a field 20 characters wide, with the whole field in quotes.<br clear="right">
+c. Prints it at the left end of a field 20 characters wide, with the whole
+field enclosed in quotes.<br clear="right">
+d. Prints it in a field 3 characters wider than the name.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+4, Programming Exercise 3. Write a program that reads in a floating point
+number and prints it first in decimal-point notation and then in exponential
+notation. Have the output use the following formats:</p>
+
+<p style="margin: 5pt 72pt;">a.
+The input is 21.3 or 2.1e+001.<br clear="right">
+b. The input is +21.290 or 2.129E+001</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+8, Review Question 1. <span class="SpellE">putchar</span>(<span class="SpellE">getchar</span>())
+is a valid expression; what does it do? Is <span class="SpellE">getchar</span>(<span class="SpellE">putchar</span>()) also valid?</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+8, Review Question 8. What potential problem do you face when intermixing
+numeric input with character input on a buffered system?</p>
+
+<p style="margin: 5pt 36pt;">Write
+a program that reads input until encountering EOF. Have it report the number of
+uppercase letters and the number of lowercase letters in the input. Use the
+functions <span class="SpellE">isalpha</span>() and <span class="SpellE">isupper</span>()
+from <span class="SpellE">ctype.h</span> to determine whether a character is
+alphabetic and upper or lower case.</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework Due: </span></strong>December 2nd</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3 style="">November
+11<sup>th</sup></h3>
+
+<h3 style="">No
+class &#8211; Veterans Day</h3>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3 style="">November
+4th</h3>
+
+<p style="margin: 5pt 36pt;">Program
+example from class: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/stack.c"><span class="SpellE">stack.c</span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/stack.h"><span class="SpellE">stack.h</span></a></p>
+
+<p style="margin: 5pt 36pt;">Lecture
+<span class="GramE">notes :</span> <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture7.pdf">Pointers <span style="text-decoration: none;"><img id="_x0000_i1037" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture07.ppt">Pointers
+(PowerPoint)</a></p>
+
+<p style="margin: 5pt 36pt;"><st1:place w:st="on"><st1:city w:st="on">Reading</st1:city></st1:place>: <span class="SpellE">Prata</span> Chapter 10 (focus on the sections describing
+pointers). Code Complete Section 11.9 "Fundamental Data Types:
+Pointers"</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment: </span></strong></p>
+
+<p style="margin: 5pt 36pt;">Chapter
+10, Review Question 4. What is the value of *<span class="SpellE">ptr</span> and
+*(<span class="SpellE">ptr</span> + 2) in each case?</p>
+
+<p style="margin: 5pt 72pt;">a.<br>
+<span class="SpellE">int</span>* <span class="SpellE">ptr</span>;<br>
+<span class="SpellE">int</span> <span class="SpellE">torf</span>[2][2] = {12, 14,
+16};<br>
+<span class="SpellE">ptr</span> = <span class="SpellE">torf</span>[0];</p>
+
+<p style="margin: 5pt 72pt;">b.<br>
+<span class="SpellE">int</span>* <span class="SpellE">ptr</span>;<br>
+<span class="SpellE">int</span> fort[2][2] = { {12}, {14, 16} };<br>
+<span class="SpellE">ptr</span> = fort[0];</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+10, Programming Exercise 2. Write a program that initializes an array of double
+and then copies the contents of the array into two other arrays. (All three
+arrays should be declared in the main program.) To make the first copy, use a
+function with array notation. To make the second copy, use a function with
+pointer notation and pointer incrementing. Have each function take as arguments
+the name of the source array, the name of the target array, and the number of
+elements to be copied. That is, the function calls would look like this, given
+the following declarations</p>
+
+<p style="margin: 5pt 72pt;"><span style="font-family: &quot;Courier New&quot;;">double source[5] = {1.1, 2.2, 3.3, 4.4, 5.5};<br clear="right">
+double target1[5];<br clear="right">
+double target2[5];<br clear="right">
+<span class="SpellE">copy_arr</span>(source, target1, 5);<br clear="right">
+<span class="SpellE">copy_ptr</span>(source, target2, 5);</span></p>
+
+<p style="">Write
+the function <strong><span style="font-family: Arial;">void swap3a(<span class="SpellE">int</span> a, <span class="SpellE">int</span> b, <span class="SpellE">int</span>
+c)</span></strong> which copies the value for a into b, the value for b into c,
+and the value for c into a. Write the function <strong><span style="font-family: Arial;">void swap3b(<span class="SpellE">int</span>* a, <span class="SpellE">int</span>*
+b, <span class="SpellE">int</span>* c)</span></strong> which copies the value for
+a into b, the value for b into c, and the value for c into a. Write a main
+program which exercises swap3a() and swap3b. Explain the differences between
+swap3a and a swap3b.</p>
+
+<p style="margin: 5pt 36pt;">Write
+the function<strong><span style="font-family: Arial;"> void <span class="SpellE">myStrNCopy</span>(char
+<span class="SpellE">dest</span>[], char source[], <span class="SpellE">int</span>
+count)</span></strong> which copies the string in source to the string in
+destination. Copies at most count characters from source to <span class="SpellE">dest</span>.
+(This is your version of the C standard library function <span class="SpellE">strncpy</span>())
+Write a main program which exercises <span class="SpellE">myStrNCopy</span>(). <!--
+
+
+
+                <font face="Arial">Class version of </font><a href="mystrcpy.c"><font
+
+
+
+                face="Arial">myStrCpy</font></a><font face="Arial">.</font></li>
+
+
+
+					--></p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework Due: </span></strong>November 18th</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3 style="">October
+28th</h3>
+
+<p style="margin: 5pt 36pt;">Program
+example from class: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/array.c"><span class="SpellE">array.c</span></a></p>
+
+<p style="margin: 5pt 36pt;">Lecture
+notes: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture6.pdf"><span class="GramE">Arrays </span><span style="text-decoration: none;"><img id="_x0000_i1039" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture06.ppt">Arrays
+(PowerPoint)</a><o:p></o:p></p>
+
+<p style="margin: 5pt 36pt;"><!--
+Homework solution: <a href="hw6.c">hw6.c</a>--><st1:place w:st="on"><st1:city w:st="on">Reading</st1:city></st1:place>: <span class="SpellE">Prata</span> Chapter 10 (focus on the sections describing arrays).
+Code Complete Chapter 11 "Fundamental Data Types" 11.1 "Numbers
+in General", 11.2 "Integers", 11.3 "Floating Point
+Numbers" 11.5 "Boolean Variables", 11.7 "Named
+Constants", and 18 "Layout and Style" (2nd <span class="SpellE">ed</span>
+Chapters 12, 31)</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment: </span></strong></p>
+
+<p style="margin: 5pt 36pt;">Chapter
+10, Review Question 7. Create an appropriate declaration for each of the
+following variables:</p>
+
+<p style="margin: 5pt 72pt;">a.
+digits is an array of ten <span class="SpellE">ints</span></p>
+
+<p style="margin: 5pt 72pt;">b.
+rates is an array of six floats</p>
+
+<p style="margin: 5pt 72pt;">c.
+mat is an array of three arrays of five integers</p>
+
+<p style="margin: 5pt 72pt;">d.
+<span class="SpellE">psa</span> is an array of 20 pointers to char</p>
+
+<p style="margin: 5pt 72pt;">e.
+<span class="SpellE">pstr</span> is a pointer to an array of 20 chars</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+10, Review Question 8.</p>
+
+<p style="margin: 5pt 72pt;">a.
+Declare an array of six <span class="SpellE">ints</span> and initialize it to the
+values 1, 2, 4, 8, 16, and 32.</p>
+
+<p style="margin: 5pt 72pt;">b.
+Use array notation to represent the third element (the one with the value 4) of
+the array in part a.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+10, Programming Exercise 4. Write a function that returns the index of the
+largest value stored in an array of double. Test the function in a simple
+program.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+10, Programming Exercise 9. Write a function that sets each element in an array
+to the sum of the corresponding elements in two other arrays. that is, if array
+1 has the values 2, 4, 5, and 8 and array 2 has the values 1, 0, 4, and 6, the
+function assigns array 3 the values 3, 4, 9, and 14. The function should take
+three array names and an array size as arguments. Test the function in a simple
+program.</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Extra credit homework assignment (6 points):</span></strong></p>
+
+<p style="margin: 0cm 36pt 0.0001pt;">Implement
+a stack data structure for storing double precision numbers. Build the stack
+using these pieces:</p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">#define STACK_MAX
+256&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* maximum numbers that may be on the</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**
+stack at any one time */</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;">&nbsp;</p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">double stack[STACK_MAX];&nbsp;&nbsp; /*
+global array used to build the stack */</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;">&nbsp;</p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span class="SpellE"><span style="font-family: &quot;Courier New&quot;;">int</span></span><span style="font-family: &quot;Courier New&quot;;"> <span class="SpellE">currentStackIndex</span>
+= 0; /* global index of current top of the stack */</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;">&nbsp;</p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">void
+push(double);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* function
+prototype for function to push a</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**
+value onto the stack */</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;">&nbsp;</p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">double pop();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* function prototype for function to pop</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**
+a value off the stack */</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;">&nbsp;</p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">void <span class="SpellE">printStack</span>();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/* function prototype for function to print all</span></p>
+
+<p style="margin: 0cm 72pt 0.0001pt;"><span style="font-family: &quot;Courier New&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+**
+the values currently on the stack */</span></p>
+
+<p style="margin: 5pt 36pt;">Your
+assignment is to implement push(), pop(), and <span class="SpellE">printStack</span>().
+Write a main program that tests the stack. Your implementation must handle the
+case when pop() is called on an empty stack, and when push is called on a full
+stack.</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework Due: </span></strong>November 4th</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3 style="">October
+21st<o:p></o:p></h3>
+
+<p style=""><!--Homework Solution: <a href="hw4.c">hw4.c</a>-->Source
+for elementary student multiplication program solved in class: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/multiplyMain.c"><span class="SpellE">multiplyMain.c</span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/multiply.h"><span class="SpellE">multiply.h</span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/myLibraryFunctions.c"><span class="SpellE">myLibraryFunctions.c</span></a></p>
+
+<p style="">Lecture
+notes: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture4.pdf">Functions, Arguments, Lifetime of <span class="GramE">Variables </span><span style="text-decoration: none;"><img id="_x0000_i1041" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture04.ppt">Functions, Arguments,
+Lifetime of Variables (PowerPoint)</a></p>
+
+<p style="margin: 5pt 36pt;">Reading:
+Chapter 9 (The section on recursion is optional). Code Complete Chapters 4
+"Steps in Building a Routine", 5 "Characteristics of
+High-Quality Routines", and 10 "General Issues in Using
+Variables" (2nd <span class="SpellE">ed</span> Chapters 5, and 7)</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment:</span></strong></p>
+
+<p style="margin: 5pt 36pt;">Chapter
+9, Review Question 1. What is the difference between an actual argument and a
+formal parameter?</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+9, Programming Exercise 3. Write a function that takes three arguments: a
+character and two integers. The character is to be printed. The first integer
+specifies the number of times that the character is to be printed on a line,
+and the second integer specifies the number of lines that are to be printed.
+Write a program that makes use of this function.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+9, Programming Exercise 4. The harmonic mean of two numbers is obtained by
+taking the inverses of the two numbers, averaging them, and taking the inverse
+of the result. Write a function that takes two double arguments and returns the
+harmonic mean of the two numbers.</p>
+
+<p style="margin: 5pt 36pt;">Write
+a function <span class="SpellE">integerPower</span>(base, exponent) that returns
+the value of base**exponent. For example, <span class="SpellE">integerPower</span>(3,
+4) = 3 * 3 * 3 * 3. Assume that exponent is a positive, nonzero integer, and
+base is an integer. The function <span class="SpellE">integerPower</span> should
+use a for loop to control the calculation. Do not use any math library
+functions.</p>
+
+<p style="margin: 5pt 36pt;">Homework
+Due: October 28th</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3 style="">October
+14th<o:p></o:p></h3>
+
+<p style="margin: 5pt 36pt;"><!--
+Solution to diamond lab problem: <a href="diamond.c">diamond.c</a></p>
+<p style="margin:5.0pt .5in; ">
+Homework solution: <a href="hw3.c">hw3.c</a>-->Lecture
+notes for: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture3.pdf">Control structures and the <span class="GramE">preprocessor
+</span><span style="text-decoration: none;"><img id="_x0000_i1043" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture03.ppt">Control structures and the
+preprocessor (PowerPoint)</a></p>
+
+<p style="margin: 5pt 36pt;"><st1:city w:st="on"><st1:place w:st="on">Reading</st1:place></st1:city>: Chapter 6,
+Chapter 7 and Chapter 16 (pages 615 to 632 only). Code Complete Chapters 13
+"Organizing Straight Line Code", 14 "Using Conditionals",
+15 "Controlling Loops", and 17 "General Control Issues"
+(2nd <span class="SpellE">ed</span> Chapters 14, 15, 16, and 19).</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Extra credit homework assignment 1 (4 points):</span></strong></p>
+
+<p style="margin: 5pt 36pt;">Write
+a program that prints the following pattern separately one below the other. Use
+for loops to generate the patterns. All asterisks (*) should be printed by a
+single <span class="SpellE">printf</span> statements of the form <span class="SpellE">printf</span>("*");, <span class="SpellE">printf</span>("
+"); and <span class="SpellE">printf</span>("\n"). (this causes the
+asterisks to print side by side)</p>
+
+<pre style="margin: 0cm 36pt 0.0001pt;"><span style="">&nbsp;</span></pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>&nbsp; *</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>**</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>***</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>****</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>*****</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>******</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>*******</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>********</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;&nbsp;<span style="">&nbsp; </span>*********</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>**********</pre>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Extra credit homework assignment 2 (4 points): </span></strong></p>
+
+<p style="margin: 5pt 36pt;">Calculate
+the value of pi from the infinite series</p>
+
+<p style="margin: 5pt 72pt;">pi
+= 4 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11 + ...</p>
+
+<p style="margin: 5pt 36pt;">Print
+a table that show the value of pi approximated by one term of this series, by
+two terms, by three terms, etc. How many terms of this series do you have to
+use before you first get 3.14? 3.141? 3.1415? 3.14159?</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment:</span></strong></p>
+
+<p style="margin: 5pt 36pt;">Chapter
+6, Programming Exercise 3. Use nested loops to produce the following pattern:</p>
+
+<pre style="margin: 0cm 36pt 0.0001pt;"><span style="">&nbsp;</span></pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>F</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>FE</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>FED</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>FEDC</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>FEDCB</pre><pre style="margin: 0cm 36pt 0.0001pt;">&nbsp;&nbsp;<span style="">&nbsp; </span>FEDCBA</pre>
+
+<p style="margin: 5pt 36pt;">Chapter
+6, Programming Exercise 5. Write a program that prints a table with each line
+giving an integer, its square, and its cube, Ask the user to input the lower
+and upper limits for the table. Use a for loop.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+7, Review Question 2. Construct an expression to express the following
+conditions:</p>
+
+<p style="margin: 5pt 72pt;">a.
+number is equal to or greater than 1 but smaller than 9.</p>
+
+<p style="margin: 5pt 72pt;">b.
+<span class="SpellE">ch</span> is not a q or a k character.</p>
+
+<p style="margin: 5pt 72pt;">c.
+number is between 1 and 9 but is not a 5.</p>
+
+<p style="margin: 5pt 72pt;">d.
+number is not between 1 and 9.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+7, Review Question 4. What is the numerical value of each of the following
+expressions?</p>
+
+<p style="margin: 5pt 72pt;">a.
+5 &gt; 2</p>
+
+<p style="margin: 5pt 72pt;">b.
+3 + 4 &gt; 2 &amp;&amp; 3 &lt; 2</p>
+
+<p style="margin: 5pt 72pt;">c.
+x &gt;= y || y &gt; x</p>
+
+<p style="margin: 5pt 72pt;">d.
+d = 5 + (6 &gt; 2)</p>
+
+<p style="margin: 5pt 72pt;">e.
+'X' &gt; 'T' ? 10 : 5</p>
+
+<p style="margin: 5pt 72pt;">f.
+x &gt; y ? y &gt; x : x &gt; y</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+7, Programming Exercise 7. Write a program that requests the hours worked in a
+week and then prints the gross pay, the taxes, and the net pay. Assume the
+following:</p>
+
+<p style="margin: 5pt 72pt;">a.
+Base pay rate = $10.00/hr</p>
+
+<p style="margin: 5pt 72pt;">b.
+Overtime (in excess of 40 hours) = time and a half</p>
+
+<p style="margin: 5pt 72pt;">c.
+Tax rate:</p>
+
+<p style="margin: 5pt 108pt;">15%
+of the first $300</p>
+
+<p style="margin: 5pt 108pt;">20%
+of the next $150</p>
+
+<p style="margin: 5pt 108pt;">25%
+of the rest</p>
+
+<p style="margin: 5pt 36pt;">Use
+#define constants, and don't worry if the example does not conform to current
+tax law.</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework due: </span></strong>October 21</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3 style=""><!-- Triangle problem solved in class - post after class --><!--
+
+
+
+
+
+
+
+    <p dir="ltr"><a href="triangle.c"><font face="Arial">Source</font></a><font
+
+
+
+    face="Arial"> for triangle problem (Deitel 4.16) solved in class</font></p>
+
+
+
+-->October 7th</h3>
+
+<p style="margin: 5pt 36pt;">Lecture
+notes for: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture2.pdf">Data types, operands, and <span class="GramE">precedence
+</span><span style="text-decoration: none;"><img id="_x0000_i1045" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture02.ppt">Data types, operands, and
+precedence (PowerPoint)</a><o:p></o:p></p>
+
+<p style="margin: 5pt 36pt;"><!--Homework Solution: <a href="hw2.c">hw2.c</a>--><st1:city w:st="on"><st1:place w:st="on">Reading</st1:place></st1:city>: <span class="SpellE">Prata</span> Chapter 3 and Chapter 5. (You may find Appendices B
+and C useful as a quick reference). Code Complete Chapters 8 "Creating
+Data", 9 "The Power of Data Names" (2nd <span class="SpellE">ed</span>
+Chapters 10, 11)</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework assignment:</span></strong></p>
+
+<p style="margin: 5pt 36pt;">Chapter
+3, Review Question 1. Which data type would you use for each of the following
+kinds of data? Include an explanation for each choice you make.</p>
+
+<p style="margin: 5pt 72pt;">a.
+The population of Rio Frito.</p>
+
+<p style="margin: 5pt 72pt;">b.
+The average weight of a Rembrandt painting.</p>
+
+<p style="margin: 5pt 72pt;">c.
+The most common letter in this chapter</p>
+
+<p style="margin: 5pt 72pt;">d.
+The number of times that letter occurs in this chapter.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+3, Review Question 2. Why would you use a type long variable instead of type <span class="SpellE">int</span>?</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+3, Review Question 6. Identify the data type (as used in declaration
+statements) and the <span class="SpellE">printf</span>() format <span class="SpellE">specifier</span> for each of the following constants:</p>
+
+<p style="margin: 5pt 72pt;">a.
+12</p>
+
+<p style="margin: 5pt 72pt;">b
+0X3</p>
+
+<p style="margin: 5pt 72pt;">c.
+'C'</p>
+
+<p style="margin: 5pt 72pt;">d.
+2.34E07</p>
+
+<p style="margin: 5pt 72pt;">e.
+'\040'</p>
+
+<p style="margin: 5pt 72pt;">f
+7.0</p>
+
+<p style="margin: 5pt 72pt;">g.
+6L</p>
+
+<p style="margin: 5pt 72pt;">h
+6.0f</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+3, Programming Exercise 2. Write a program that asks you to enter an ASCII code
+value, such as 66, and then prints the character having that ASCII code.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+5, Review Question 1. Assume all variables are of type int. Find the value of
+each of the following variables:</p>
+
+<p style="margin: 5pt 72pt;">a.
+x= (2 + 3) * 6;</p>
+
+<p style="margin: 5pt 72pt;">b.
+x = (12 + 6)/2*3;</p>
+
+<p style="margin: 5pt 72pt;">c.
+y = x = (2 + 3) / 4;</p>
+
+<p style="margin: 5pt 72pt;">d.
+y = 3 + 2*(x = 7 / 2);</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+5, Programming Exercise 2. Write a program that asks for an integer and then
+prints all the integers from (and including) that value up to (and including) a
+value larger by 10. (That is, if the input is 5, the output runs from 5 to 15).
+Be sure to separate each output value by a space or tab or newline.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+5, Programming Exercise 3. Write a program that asks the user to enter the
+number of days and then converts that value to weeks and days. For example, it
+would convert 18 days to 2 weeks, 4 days. Display results in the following
+format:</p>
+
+<p style="margin: 5pt 36pt;"><b>18
+days are 2 weeks, 4 days.</b></p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework due: </span></strong>October 14th</p>
+
+<div class="MsoNormal" style="text-align: center;" align="center">
+
+<hr align="center" size="2" width="100%">
+
+</div>
+
+<h3 style="">September
+30th</h3>
+
+<p style="margin: 5pt 36pt;"><a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/cp701intro.pdf">Class syllabus<span style="text-decoration: none;"><img id="_x0000_i1047" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/ClassIntro.ppt">Class Syllabus (PowerPoint)</a><o:p></o:p></p>
+
+<p style="margin: 5pt 36pt;"><!--
+Homework Solution: <a href="hw1.c">hw1.c</a>-->Lecture
+notes for: <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/lecture1.pdf">Introduction <span class="GramE">To</span> C
+Programming<span style="text-decoration: none;"><img id="_x0000_i1048" src="file:///D:%5CNielsenBuilds%5CCIntro%5Cpdficonsmall.gif" alt="PDF file" align="bottom" border="0" width="22" height="24"></span></a>, <a href="http://home.comcast.net/%7Edavid.e.nielsen/cp701/Lecture01.ppt">Introduction to C Programming
+(PowerPoint)</a></p>
+
+<p style="margin: 5pt 36pt;"><st1:city w:st="on"><st1:place w:st="on">Reading</st1:place></st1:city>: <span class="SpellE">Prata</span> - Chapter 1 and Chapter 2, Code Complete 1st edition,
+Chapter 31, &#8220;Personal Character&#8221; (2nd edition Chapter 33)<o:p></o:p></p>
+
+<p style="margin: 5pt 36pt;"><!--
+Class Example: <a href="love.c">love.c</a>--><strong><span style="font-family: Arial;">Homework assignment:</span></strong></p>
+
+<p style="margin: 5pt 36pt;">Chapter
+1, Programming Exercise 1. You have just been employed by <span class="SpellE">MacroMuscle</span>,
+Inc. (Software for Hard Bodies). They are entering the European market and want
+a program that converts inches to centimeters (1" = 2.54 cm). They want
+the program set up so that it prompts the user to enter an inch value. Your
+assignment is to define the program objectives and to design the program (steps
+1 and 2 of the programming process).</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+2, Programming Exercise 1. Write a program that uses one <span class="SpellE">printf</span>()
+call to print your first name and last name on one line, uses a second <span class="SpellE">printf</span>() call to print your first and last name on two
+separate lines, and uses a pair of <span class="SpellE">printf</span>() calls to
+print your first and last name on one line. The output should look like this
+(but using your name). </p>
+
+<table class="MsoNormalTable" style="margin-left: 36pt;" border="0" cellpadding="0">
+ <tbody><tr style="">
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal"><b>Mae West</b></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal">First print statement</p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal"><b>Mae</b></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal">Second print statement</p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal"><b>West</b></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal">Still the second print statement</p>
+  </td>
+ </tr>
+ <tr style="">
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal"><b>Mae West</b></p>
+  </td>
+  <td style="padding: 0.75pt;">
+  <p class="MsoNormal">Third and fourth print statements</p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p style="margin: 5pt 36pt;">Chapter
+2, Programming Exercise 3. Write a program that converts your age in years to
+days and displays both values. At this point, don't worry about fractional
+years and leap years.</p>
+
+<p style="margin: 5pt 36pt;">Chapter
+2, Programming Exercise 5. Write a program that creates an integer variable
+called toes. Have the program set toes to 10. Also have the program calculate
+what twice toes is and what toes squared is. The program should print all three
+values, identifying them.</p>
+
+<p style="margin: 5pt 36pt;"><strong><span style="font-family: Arial;">Homework due: </span></strong>October 7th</p>
+
+</div>
+
+</body></html>

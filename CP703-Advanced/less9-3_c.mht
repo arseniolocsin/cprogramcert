@@ -1,0 +1,62 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less9-3.c.html
+Date: Wed, 25 May 2005 17:09:25 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less9-3.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less9-3.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE: less9-3.c</FONT>
+<FONT color=3D#80a0ff> * Description: Demonstrate returning a function =
+pointer to from a function</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+
+<FONT color=3D#60ff60>void</FONT> error_proc1( <FONT =
+color=3D#60ff60>char</FONT> * error_msg )
+{
+    puts( error_msg );
+}
+
+<FONT color=3D#60ff60>void</FONT> error_proc2( <FONT =
+color=3D#60ff60>char</FONT> * error_msg )
+{
+    puts( error_msg );
+}
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT>( =
+*get_error_proc (<FONT color=3D#60ff60>int</FONT> flag) )(<FONT =
+color=3D#60ff60>char</FONT> *)
+{
+    <FONT color=3D#ffff00>if</FONT> ( flag =3D=3D <FONT =
+color=3D#ffa0a0>0</FONT> )
+        <FONT color=3D#ffff00>return</FONT> error_proc1;
+    <FONT color=3D#ffff00>else</FONT>
+        <FONT color=3D#ffff00>return</FONT> error_proc2;
+}
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    <FONT color=3D#60ff60>void</FONT> (*my_func)( <FONT =
+color=3D#60ff60>char</FONT> * );
+
+    my_func =3D get_error_proc( <FONT color=3D#ffa0a0>0</FONT> );
+    my_func( <FONT color=3D#ffa0a0>"big dog"</FONT> );
+}
+</PRE></BODY></HTML>

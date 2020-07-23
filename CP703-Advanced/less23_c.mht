@@ -1,0 +1,103 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less23.c.html
+Date: Wed, 25 May 2005 17:12:19 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less23.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less23.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE: less23.c</FONT>
+<FONT color=3D#80a0ff> * Description: Program to demonstrate variable =
+argument parameter lists</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdarg.h&gt;</FONT>
+
+<FONT color=3D#ff80ff>#define INTVAL  (</FONT><FONT =
+color=3D#ffa0a0>0</FONT><FONT color=3D#ff80ff>)</FONT>
+<FONT color=3D#ff80ff>#define DBLVAL  (</FONT><FONT =
+color=3D#ffa0a0>1</FONT><FONT color=3D#ff80ff>)</FONT>
+<FONT color=3D#ff80ff>#define CHARVAL (</FONT><FONT =
+color=3D#ffa0a0>2</FONT><FONT color=3D#ff80ff>)</FONT>
+<FONT color=3D#ff80ff>#define NOVAL   (</FONT><FONT =
+color=3D#ffa0a0>3</FONT><FONT color=3D#ff80ff>)</FONT>
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+printval( <FONT color=3D#60ff60>int</FONT> type, ... );
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    printval( INTVAL,  <FONT color=3D#ffa0a0>42</FONT>,
+              CHARVAL, <FONT color=3D#ffa0a0>"Minnesota"</FONT>,
+              DBLVAL,  <FONT color=3D#ffa0a0>3.14</FONT>,
+              CHARVAL, <FONT color=3D#ffa0a0>"Alabama"</FONT>,
+              NOVAL
+            );
+}
+
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+printval( <FONT color=3D#60ff60>int</FONT> type, ... )
+{
+    <FONT color=3D#60ff60>va_list</FONT> argp;
+    <FONT color=3D#60ff60>int</FONT>     int_val =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>double</FONT>  dbl_val =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>char</FONT>    *char_val =3D <FONT =
+color=3D#ffa0a0>NULL</FONT>;
+
+    va_start( argp, type );
+
+    <FONT color=3D#ffff00>while</FONT>( type !=3D NOVAL )
+    {
+        <FONT color=3D#ffff00>switch</FONT>( type )
+        {
+            <FONT color=3D#ffff00>case</FONT> INTVAL:
+                int_val =3D va_arg( argp, <FONT =
+color=3D#60ff60>int</FONT> );
+                printf( <FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, int_val );
+                <FONT color=3D#ffff00>break</FONT>;
+            <FONT color=3D#ffff00>case</FONT> DBLVAL:
+                dbl_val =3D va_arg( argp, <FONT =
+color=3D#60ff60>double</FONT> );
+                printf( <FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>%f</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, dbl_val );
+                <FONT color=3D#ffff00>break</FONT>;
+            <FONT color=3D#ffff00>case</FONT> CHARVAL:
+                char_val =3D va_arg( argp, <FONT =
+color=3D#60ff60>char</FONT> * );
+                printf( <FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>%s</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, char_val );
+                <FONT color=3D#ffff00>break</FONT>;
+            <FONT color=3D#ffff00>default</FONT>:
+                ;   <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> Shouldn't ever get here </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+        }
+        type =3D va_arg( argp, <FONT color=3D#60ff60>int</FONT> );
+    }
+
+    va_end( argp );
+}
+
+</PRE></BODY></HTML>

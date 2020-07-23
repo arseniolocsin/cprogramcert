@@ -1,0 +1,67 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less22-2.c.html
+Date: Wed, 25 May 2005 17:12:08 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less22-2.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less22-2.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE: less22-2.c</FONT>
+<FONT color=3D#80a0ff> * Description: program to demonstrate bit =
+fields</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> bit fields =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>struct</FONT>
+{
+    <FONT color=3D#60ff60>unsigned</FONT> <FONT =
+color=3D#60ff60>int</FONT> is_keyword : <FONT color=3D#ffa0a0>1</FONT>; =
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> number represents =
+field width in bits </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#60ff60>unsigned</FONT> <FONT =
+color=3D#60ff60>int</FONT> is_extern  : <FONT color=3D#ffa0a0>1</FONT>; =
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> they do not have =
+addresses </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#60ff60>unsigned</FONT> <FONT =
+color=3D#60ff60>int</FONT> is_static  : <FONT color=3D#ffa0a0>1</FONT>; =
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> so &amp; operator =
+cannot be applied </FONT><FONT color=3D#80a0ff>*/</FONT>
+} flags;
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> turn bits on =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+    flags.is_extern =3D <FONT color=3D#ffa0a0>1</FONT>;
+
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> turn bits off =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+    flags.is_static =3D <FONT color=3D#ffa0a0>0</FONT>;
+
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> test bits =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#ffff00>if</FONT> ( flags.is_static =3D=3D <FONT =
+color=3D#ffa0a0>0</FONT> &amp;&amp; flags.is_extern =3D=3D <FONT =
+color=3D#ffa0a0>1</FONT> )
+        printf( <FONT color=3D#ffa0a0>"static off and extern =
+on!!</FONT><FONT color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT> =
+);
+
+}
+</PRE></BODY></HTML>

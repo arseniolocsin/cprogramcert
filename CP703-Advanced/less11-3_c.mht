@@ -1,0 +1,200 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less11-3.c.html
+Date: Wed, 25 May 2005 17:10:56 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less11-3.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less11-3.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+***************</FONT>
+<FONT color=3D#80a0ff> * FILE:  less11-3.c</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * DESCRIPTION: Program to demonstrate qsort =
+algorithm</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdlib.h&gt;</FONT>
+
+<FONT color=3D#60ff60>void</FONT> qsort_of( <FONT =
+color=3D#60ff60>int</FONT> * array, <FONT color=3D#60ff60>int</FONT> =
+count );
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+swap( <FONT color=3D#60ff60>int</FONT> * lo_elm,  <FONT =
+color=3D#60ff60>int</FONT> * hi_elm );
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+prnt_ints( <FONT color=3D#60ff60>char</FONT> * str, <FONT =
+color=3D#60ff60>int</FONT> p[], <FONT color=3D#60ff60>int</FONT> num );
+
+<FONT color=3D#60ff60>int</FONT> num_swaps =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+<FONT color=3D#60ff60>int</FONT> num_cycles =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+<FONT color=3D#60ff60>int</FONT> num_parts =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+
+<FONT color=3D#60ff60>static</FONT> print_ints( <FONT =
+color=3D#60ff60>char</FONT> * msg, <FONT color=3D#60ff60>int</FONT> * =
+array, <FONT color=3D#60ff60>int</FONT> count )
+{
+    <FONT color=3D#60ff60>int</FONT> inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    printf( msg );
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; count-<FONT color=3D#ffa0a0>1</FONT>; =
+inx++ )
+       printf( <FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>%.3d</FONT><FONT color=3D#ffa0a0> &lt;&gt; "</FONT>, =
+array[inx] );
+    printf( <FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>%.3d</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, array[inx] );
+}
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+swap( <FONT color=3D#60ff60>int</FONT> * lo_obj, <FONT =
+color=3D#60ff60>int</FONT> * hi_obj )
+{
+    <FONT color=3D#ffff00>if</FONT> ( lo_obj !=3D hi_obj )
+    {
+        <FONT color=3D#60ff60>int</FONT> tmp =3D *lo_obj;
+        *lo_obj =3D *hi_obj;
+        *hi_obj =3D tmp;
+        num_swaps++;
+    }
+}
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+<FONT color=3D#ff80ff>#define CARD( aaa ) (</FONT><FONT =
+color=3D#ffff00>sizeof</FONT><FONT color=3D#ff80ff>(aaa)/</FONT><FONT =
+color=3D#ffff00>sizeof</FONT><FONT color=3D#ff80ff>(*(aaa)))</FONT>
+
+    <FONT color=3D#60ff60>int</FONT> inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>int</FONT> nums[<FONT =
+color=3D#ffa0a0>10</FONT>];
+
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; CARD(nums); inx++)
+        nums[inx] =3D rand( )%<FONT color=3D#ffa0a0>1000</FONT>;
+
+    print_ints( <FONT color=3D#ffa0a0>"Before sort: "</FONT>, nums, =
+CARD(nums) );
+    qsort_of( nums, CARD(nums) );
+    print_ints( <FONT color=3D#ffa0a0>"After sort:  "</FONT>, nums, =
+CARD(nums) );
+    printf( <FONT color=3D#ffa0a0>"num_cycles </FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa0a0> :: num_swaps =
+</FONT><FONT color=3D#ffa500>%d</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, num_cycles, =
+num_swaps );
+}
+
+<FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff> * The qsort_of function uses the qsort algorithm =
+(also known as</FONT>
+<FONT color=3D#80a0ff> * divide and conquer) to sort an array of =
+integers.  The standard</FONT>
+<FONT color=3D#80a0ff> * library version of this function sorts arrays =
+generically and is the</FONT>
+<FONT color=3D#80a0ff> * one you should use in practice.  Please refer =
+to the Data Structures</FONT>
+<FONT color=3D#80a0ff> * and Program Design in C, Section 7.8 for =
+details.</FONT>
+<FONT color=3D#80a0ff> </FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> =
+partition( <FONT color=3D#60ff60>int</FONT> * array, <FONT =
+color=3D#60ff60>int</FONT> count );
+<FONT color=3D#60ff60>void</FONT> qsort_of( <FONT =
+color=3D#60ff60>int</FONT> * array, <FONT color=3D#60ff60>int</FONT> =
+count )
+{
+    <FONT color=3D#ffff00>if</FONT> ( count &gt; <FONT =
+color=3D#ffa0a0>1</FONT> )
+    {
+        <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> partition =
+divides array in to two buckets</FONT>
+<FONT color=3D#80a0ff>         * then call qsort_of to recursively sort =
+each bucket </FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#60ff60>int</FONT> pivot =3D partition( array, =
+count );
+        qsort_of( array, pivot );
+        qsort_of( &amp;array[pivot+<FONT color=3D#ffa0a0>1</FONT>], =
+count - (pivot+<FONT color=3D#ffa0a0>1</FONT>) );
+    }
+}
+
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+*********************</FONT>
+<FONT color=3D#80a0ff> * partition - partitions array in to two buckets. =
+ The partition position</FONT>
+<FONT color=3D#80a0ff> *    defines the index of division between =
+buckets.  Objects to the left are </FONT>
+<FONT color=3D#80a0ff> *    lower in value then the partition.  Objects =
+to the right are higher in </FONT>
+<FONT color=3D#80a0ff> *    value then the partition. </FONT>
+<FONT color=3D#80a0ff> * Input:  array </FONT>
+<FONT color=3D#80a0ff> * Output: count</FONT>
+<FONT color=3D#80a0ff> * Returns: partition position</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+****</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> =
+partition( <FONT color=3D#60ff60>int</FONT> * array, <FONT =
+color=3D#60ff60>int</FONT> count )
+{
+    <FONT color=3D#60ff60>int</FONT> pivot =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>int</FONT> inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+
+    <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> arbitrarily =
+choose middle object as pivot </FONT>
+<FONT color=3D#80a0ff>     * and move it to head of the array. =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+    swap( &amp;array[<FONT color=3D#ffa0a0>0</FONT>], =
+&amp;array[count/<FONT color=3D#ffa0a0>2</FONT>] );
+
+    <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> loop through =
+the rest of the array</FONT>
+<FONT color=3D#80a0ff>     * looking for objects smaller then pivot =
+</FONT>
+<FONT color=3D#80a0ff>     * object.   If found move object to </FONT>
+<FONT color=3D#80a0ff>     * pivot - really lastsmall position =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>1</FONT>; inx &lt; count; num_cycles++,inx++ )
+    {
+        <FONT color=3D#ffff00>if</FONT> ( array[inx] &lt; array[<FONT =
+color=3D#ffa0a0>0</FONT>] )
+        {
+            swap( &amp;array[++pivot], &amp;array[inx] );
+        }
+    }
+
+    <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> move pivot to =
+partition position </FONT><FONT color=3D#80a0ff>*/</FONT>
+    swap( &amp;array[<FONT color=3D#ffa0a0>0</FONT>], &amp;array[pivot] =
+);
+    <FONT color=3D#ffff00>return</FONT> pivot;
+}
+</PRE></BODY></HTML>

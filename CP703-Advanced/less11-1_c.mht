@@ -1,0 +1,159 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less11-1.c.html
+Date: Wed, 25 May 2005 17:10:36 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less11-1.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less11-1.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+***************</FONT>
+<FONT color=3D#80a0ff> * FILE: less11-1.c</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * DESCRIPTION: Program to demonstrate simple sort =
+and search</FONT>
+<FONT color=3D#80a0ff> *              This sort and search represents =
+the worst case and</FONT>
+<FONT color=3D#80a0ff> *              least efficient approach.</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+print_ints( <FONT color=3D#60ff60>int</FONT> int_arr[], <FONT =
+color=3D#60ff60>int</FONT> num );
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+swap_ints( <FONT color=3D#60ff60>int</FONT> * left, <FONT =
+color=3D#60ff60>int</FONT> * right );
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+selection_sort_ints( <FONT color=3D#60ff60>int</FONT> * arr, <FONT =
+color=3D#60ff60>int</FONT> num );
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> =
+search_ints( <FONT color=3D#60ff60>int</FONT> * int_arr, <FONT =
+color=3D#60ff60>int</FONT> num, <FONT color=3D#60ff60>int</FONT> =
+num_to_find );
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    <FONT color=3D#60ff60>int</FONT> int_arr[<FONT =
+color=3D#ffa0a0>10</FONT>] =3D { <FONT color=3D#ffa0a0>5</FONT>, <FONT =
+color=3D#ffa0a0>3</FONT>, <FONT color=3D#ffa0a0>4</FONT>, <FONT =
+color=3D#ffa0a0>6</FONT>, <FONT color=3D#ffa0a0>7</FONT>, <FONT =
+color=3D#ffa0a0>8</FONT>, <FONT color=3D#ffa0a0>10</FONT>, <FONT =
+color=3D#ffa0a0>2</FONT>, <FONT color=3D#ffa0a0>1</FONT>, <FONT =
+color=3D#ffa0a0>9</FONT> };
+    <FONT color=3D#60ff60>int</FONT> val =3D -<FONT =
+color=3D#ffa0a0>1</FONT>;
+
+    print_ints( int_arr, <FONT color=3D#ffa0a0>10</FONT> );
+
+    selection_sort_ints( int_arr, <FONT color=3D#ffa0a0>10</FONT> );
+
+    print_ints( int_arr, <FONT color=3D#ffa0a0>10</FONT> );
+
+    val =3D search_ints( int_arr, <FONT color=3D#ffa0a0>10</FONT>, <FONT =
+color=3D#ffa0a0>3</FONT> );
+
+    printf( <FONT color=3D#ffa0a0>"found the </FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa0a0>!!</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, val );
+}
+
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+selection_sort_ints( <FONT color=3D#60ff60>int</FONT> * int_arr, <FONT =
+color=3D#60ff60>int</FONT> num )
+{
+    <FONT color=3D#60ff60>int</FONT> inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>, jnx =3D <FONT color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>int</FONT> item =3D -<FONT =
+color=3D#ffa0a0>1</FONT>;
+    <FONT color=3D#60ff60>int</FONT> num_cycles =3D <FONT =
+color=3D#ffa0a0>0</FONT>, num_swaps =3D <FONT color=3D#ffa0a0>0</FONT>;
+
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; num; inx++ )
+    {
+      item =3D inx;
+      <FONT color=3D#ffff00>for</FONT> ( jnx =3D inx+<FONT =
+color=3D#ffa0a0>1</FONT>; jnx &lt; num; jnx++ )
+      {
+         num_cycles++;
+         <FONT color=3D#ffff00>if</FONT> ( int_arr[jnx] &lt; =
+int_arr[item] )
+         {
+            item =3D jnx;
+         }
+      }
+      <FONT color=3D#ffff00>if</FONT> ( item !=3D inx )
+      {
+        num_swaps++;
+        swap_ints( &amp;int_arr[inx], &amp;int_arr[item] );
+      }
+    }
+    printf( <FONT color=3D#ffa0a0>"num_cycles </FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa0a0> :: num_swaps =
+</FONT><FONT color=3D#ffa500>%d</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, num_cycles, =
+num_swaps );
+}
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+print_ints( <FONT color=3D#60ff60>int</FONT> int_arr[], <FONT =
+color=3D#60ff60>int</FONT> num )
+{
+    <FONT color=3D#60ff60>int</FONT> inx;
+    printf( <FONT color=3D#ffa0a0>"the int arr =3D=3D&gt; "</FONT> );
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; num ; inx ++ )
+        printf( <FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa0a0>  "</FONT>, int_arr[inx] =
+);
+    puts( <FONT color=3D#ffa0a0>""</FONT> );
+}
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+swap_ints( <FONT color=3D#60ff60>int</FONT> * left, <FONT =
+color=3D#60ff60>int</FONT> * right )
+{
+    <FONT color=3D#60ff60>int</FONT> tmp;
+    tmp   =3D * right;
+    * right =3D * left;
+    * left  =3D tmp;
+}
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> =
+search_ints( <FONT color=3D#60ff60>int</FONT> * int_arr, <FONT =
+color=3D#60ff60>int</FONT> num, <FONT color=3D#60ff60>int</FONT> =
+num_to_find )
+{
+    <FONT color=3D#60ff60>int</FONT> inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>int</FONT> val =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+
+    val =3D -<FONT color=3D#ffa0a0>1</FONT>;
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; num &amp;&amp; val =3D=3D -<FONT =
+color=3D#ffa0a0>1</FONT> ; inx++ )
+    {
+      <FONT color=3D#ffff00>if</FONT> ( int_arr[inx] =3D=3D num_to_find =
+)
+        val =3D num_to_find;
+    }
+    <FONT color=3D#ffff00>return</FONT> val;
+}
+</PRE></BODY></HTML>

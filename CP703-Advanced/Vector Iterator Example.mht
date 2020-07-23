@@ -1,0 +1,42 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Vector Iterator Example
+Date: Wed, 17 Aug 2005 20:36:47 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/jstraub/dsa/slides/Iterators/250VectorExample.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Vector Iterator Example</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2722" name=3DGENERATOR></HEAD>
+<BODY>
+<P><FONT size=3D-1><B>C Programming: Data Structures</B> </FONT>
+<P><FONT size=3D+2><PRE>static void
+printCustomerReport( const char* title, VEC_ID_t vec )
+{
+    CUST_REC_p_t    rec     =3D VEC_begin( vec );
+    CUST_REC_p_t    vend    =3D VEC_end( vec );
+
+    printCustomerReportHeadings( title );
+    while ( rec &lt; vend )
+        printCustomerReportDetail( rec++ );
+}
+</PRE></FONT>
+<P><FONT size=3D-1><B>Iterators</B> </FONT><!-- browser trailer start =
+-->
+<HR>
+
+<CENTER>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/240VEC=
+_end.html">=20
+prev </A>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/all.ht=
+ml">=20
+index </A>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/300Lis=
+tIterators.html">=20
+next </A></CENTER><!-- browser trailer end --></BODY></HTML>

@@ -1,0 +1,12 @@
+Failed to parse >>0.0            zero-number<<
+Failed to parse >>0              another-zero<<
+Failed to parse >><<
+Failed to parse >>no-num<<
+Failed to parse >>invalid-num       xxx<<
+Failed to parse >>name-in-wrong-position  123.45<<
+Failed to parse >>123.45  <<
+Failed to parse >><<
+Failed to parse >>no-num<<
+Failed to parse >>invalid-num       xxx<<
+Failed to parse >>name-in-wrong-position  123.45<<
+Failed to parse >>123.45  <<

@@ -1,0 +1,83 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less20.c.html
+Date: Wed, 25 May 2005 17:11:47 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less20.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less20.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE: less20.c</FONT>
+<FONT color=3D#80a0ff> * Description: Program to demonstrate longjmp and =
+signals</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdlib.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;signal.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;setjmp.h&gt;</FONT>
+
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>jmp_buf</FONT> =
+context;
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+sig_handler( <FONT color=3D#60ff60>int</FONT> sig )
+{
+    <FONT color=3D#ffff00>if</FONT> ( sig =3D=3D <FONT =
+color=3D#ffa0a0>SIGABRT</FONT> )
+        puts( <FONT color=3D#ffa0a0>"SIGABRT encountered"</FONT> );
+    signal( sig, sig_handler );
+    longjmp( context, <FONT color=3D#ffa0a0>1</FONT> );
+}
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    <FONT color=3D#60ff60>int</FONT> error =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>void</FONT> (*rcode)( <FONT =
+color=3D#60ff60>int</FONT> );
+
+    rcode =3D signal( <FONT color=3D#ffa0a0>SIGABRT</FONT>, sig_handler =
+);
+    <FONT color=3D#ffff00>if</FONT> ( rcode =3D=3D <FONT =
+color=3D#ffa0a0>SIG_ERR</FONT> )
+        puts( <FONT color=3D#ffa0a0>"ERROR: Unable to establish signal =
+handler"</FONT> );
+    <FONT color=3D#ffff00>else</FONT> <FONT color=3D#ffff00>if</FONT> ( =
+rcode =3D=3D <FONT color=3D#ffa0a0>SIG_DFL</FONT> )
+        puts( <FONT color=3D#ffa0a0>"Establish signal handler"</FONT> );
+    <FONT color=3D#ffff00>else</FONT>
+        puts( <FONT color=3D#ffa0a0>"eh?"</FONT> );
+    error =3D setjmp( context );
+    <FONT color=3D#ffff00>if</FONT> ( !error )
+    {
+        puts( <FONT color=3D#ffa0a0>"Main processing"</FONT> );
+        abort();
+    }
+    <FONT color=3D#ffff00>else</FONT>
+    {
+        printf( <FONT color=3D#ffa0a0>"Recovery block - error =
+</FONT><FONT color=3D#ffa500>%d</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, error );
+    }
+    <FONT color=3D#ffff00>return</FONT> <FONT =
+color=3D#ffa0a0>EXIT_SUCCESS</FONT>;
+}
+</PRE></BODY></HTML>

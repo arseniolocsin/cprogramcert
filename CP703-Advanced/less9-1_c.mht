@@ -1,0 +1,64 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less9-1.c.html
+Date: Wed, 25 May 2005 17:09:01 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less9-1.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less9-1.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE:  less9-1.c</FONT>
+<FONT color=3D#80a0ff> * Description:  FUNCTION POINTERS</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+
+
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> the function =
+proto-type </FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>void</FONT> my_func( <FONT =
+color=3D#60ff60>void</FONT> );    <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> a function that takes no arguments</FONT>
+<FONT color=3D#80a0ff>                          * and returns nothing =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>void</FONT> my_func( <FONT =
+color=3D#60ff60>void</FONT> )
+{
+    puts( <FONT color=3D#ffa0a0>"hello world"</FONT> );
+}
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> declaration of =
+pointer to function </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#60ff60>void</FONT> (* func_ptr) ( <FONT =
+color=3D#60ff60>void</FONT> ); <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> a pointer to a function</FONT>
+<FONT color=3D#80a0ff>                                 * that takes no =
+arguments</FONT>
+<FONT color=3D#80a0ff>                                 * and returns =
+nothing </FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> pointer =
+initialization </FONT><FONT color=3D#80a0ff>*/</FONT>
+    func_ptr =3D my_func;    <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> func_ptr points to a block of</FONT>
+<FONT color=3D#80a0ff>                            * information needed =
+to execute my_func </FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> and function =
+execution </FONT><FONT color=3D#80a0ff>*/</FONT>
+    func_ptr();
+}
+</PRE></BODY></HTML>

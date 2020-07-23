@@ -1,0 +1,55 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less10.c.html
+Date: Wed, 25 May 2005 17:09:50 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less10.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less10.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+*******************</FONT>
+<FONT color=3D#80a0ff> * File: less10.c</FONT>
+<FONT color=3D#80a0ff> * Description:</FONT>
+<FONT color=3D#80a0ff> *   This program demonstrates recursive factorial =
+algorithm</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;assert.h&gt;</FONT>
+
+<FONT color=3D#ff80ff>#define FACTNUM (</FONT><FONT =
+color=3D#ffa0a0>5</FONT><FONT color=3D#ff80ff>)</FONT>
+<FONT color=3D#60ff60>int</FONT> factorial( <FONT =
+color=3D#60ff60>int</FONT> num )
+{
+    assert( num &gt;=3D <FONT color=3D#ffa0a0>0</FONT> );
+    <FONT color=3D#ffff00>if</FONT> ( num &gt; <FONT =
+color=3D#ffa0a0>1</FONT> )
+        <FONT color=3D#ffff00>return</FONT> num * factorial( num - <FONT =
+color=3D#ffa0a0>1</FONT> );
+    <FONT color=3D#ffff00>return</FONT> <FONT color=3D#ffa0a0>1</FONT>;
+}
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    <FONT color=3D#60ff60>int</FONT> val =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    val =3D factorial( FACTNUM );
+    printf( <FONT color=3D#ffa0a0>"Factorial of </FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa0a0> is </FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, FACTNUM, val );
+}
+</PRE></BODY></HTML>

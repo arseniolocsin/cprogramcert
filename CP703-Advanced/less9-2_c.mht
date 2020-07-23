@@ -1,0 +1,65 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less9-2.c.html
+Date: Wed, 25 May 2005 17:09:13 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less9-2.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less9-2.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE: less9-2.c</FONT>
+<FONT color=3D#80a0ff> * Description:  Demonstrate passing a function =
+pointer to a function</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+****</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> proto-type for =
+function to pass </FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>void</FONT> other_func( <FONT =
+color=3D#60ff60>int</FONT> color );
+
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> proto-type for =
+function that takes </FONT>
+<FONT color=3D#80a0ff> * as an argument pointer to a function =
+that</FONT>
+<FONT color=3D#80a0ff> * take on int and returns void</FONT>
+<FONT color=3D#80a0ff> </FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>void</FONT> func( <FONT color=3D#60ff60>int</FONT> =
+, <FONT color=3D#60ff60>void</FONT> (*pass_func)(<FONT =
+color=3D#60ff60>int</FONT> color) );
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    func( <FONT color=3D#ffa0a0>3</FONT>, other_func );
+}
+
+<FONT color=3D#60ff60>void</FONT> other_func( <FONT =
+color=3D#60ff60>int</FONT> color )
+{
+    printf( <FONT color=3D#ffa0a0>"the color is </FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, color );
+}
+
+<FONT color=3D#60ff60>void</FONT> func( <FONT color=3D#60ff60>int</FONT> =
+color, <FONT color=3D#60ff60>void</FONT> (*pass_func)(<FONT =
+color=3D#60ff60>int</FONT> color) )
+{
+    pass_func( color );
+}
+</PRE></BODY></HTML>

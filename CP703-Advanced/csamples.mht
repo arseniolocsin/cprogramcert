@@ -1,0 +1,197 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: 
+Date: Wed, 25 May 2005 17:09:41 -0700
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C5614C.8A077340"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C5614C.8A077340
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR></HEAD>
+<BODY =
+background=3Dhttp://faculty.washington.edu/sproedp/advc/csamples/bck2.gif=
+><!-- =0A=
+<B><FONT SIZE=3D+1><A HREF=3D"csamples.tar">Sample source tar file (Unix =
+format)</A>.</FONT></B>=0A=
+<BR><B><FONT SIZE=3D+1><A HREF=3D"csamples.zip">Sample source zip file =
+(Windows format).</A></FONT></B>=0A=
+-->
+<P><B><FONT size=3D+1>Links to sample source code:</FONT></B>=20
+<TABLE width=3D"100%" NOSAVE>
+  <TBODY>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less4.c.html"=
+>less4.c</A></FONT></B></TD>
+    <TD NOSAVE><B><FONT size=3D+1>This program writes and reads an int =
+array to=20
+      stdout and a BINARY file.</FONT></B></TD></TR>
+  <TR NOSAVE>
+    <TD NOSAVE><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less9-1.c.htm=
+l">less9-1.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate function=20
+    pointers.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less9-2.c.htm=
+l">less9-2.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate passing a function =
+pointer to=20
+      a function.</FONT></B></TD></TR>
+  <TR NOSAVE>
+    <TD NOSAVE><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less9-3.c.htm=
+l">less9-3.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate returning a function =
+pointer=20
+      to from a function.</FONT></B></TD></TR>
+  <TR NOSAVE>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less10.c.html=
+">less10.c</A></FONT></B></TD>
+    <TD NOSAVE><B><FONT size=3D+1>Program to demonstrates recursive =
+factorial=20
+      algorithm.</FONT></B></TD></TR>
+  <TR NOSAVE>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less11-1.c.ht=
+ml">less11-1.c</A></FONT></B></TD>
+    <TD NOSAVE><B><FONT size=3D+1>Program to demonstrate simple sort and =
+
+      search.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less11-2.c.ht=
+ml">less11-2.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate qsort and binary=20
+      search.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less11-3.c.ht=
+ml">less11-3.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate qsort=20
+  algorithm.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less16.c.html=
+">less16.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate enumerated=20
+  types.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less17.c.html=
+">less17.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program illustrating linked list=20
+    concepts.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less20.c.html=
+">less20.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate longjmp and=20
+    signals.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less22-1.c.ht=
+ml">less22-1.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to set and test =
+bits.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less22-2.c.ht=
+ml">less22-2.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate bit =
+fields.</FONT></B></TD></TR>
+  <TR>
+    <TD><B><FONT size=3D+1><A=20
+      =
+href=3D"http://faculty.washington.edu/sproedp/advc/csamples/less23.c.html=
+">less23.c</A></FONT></B></TD>
+    <TD><B><FONT size=3D+1>Program to demonstrate variable argument =
+parameter=20
+      lists.</FONT></B></TD></TR><!--=0A=
+<TR>=0A=
+<TD><B><FONT SIZE=3D+1><A =
+HREF=3D"less25.c.html">less25.c</A></FONT></B></TD>=0A=
+=0A=
+<TD><B><FONT SIZE=3D+1>Program to demonstrate simple hashing =
+table.</FONT></B></TD>=0A=
+</TR>=0A=
+--></TBODY></TABLE>
+<P><B><I>Email:&nbsp; <A=20
+href=3D"mailto:sproedp@u.washington.edu">sproedp@u.washington.edu</A></I>=
+</B>=20
+<BR><B><I>Web:&nbsp; <A=20
+href=3D"http://faculty.washington.edu/sproedp">http://faculty.washington.=
+edu/sproedp</A></I></B>=20
+
+<P><B><I>Copyright =A9 2005 by Perry Sproed. All rights =
+reserved.</I></B>=20
+<BR><B><I>Last modified: January 12, 2005.</I></B> </P></BODY></HTML>
+
+------=_NextPart_000_0000_01C5614C.8A077340
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/bck2.gif
+
+R0lGODlhsAQKAPf/AP//////9///7///5///3v//1v//zv//xv//vf//tQAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACwAAAAAsAQKAEAI/wADCBxI
+sKBBAQIRBkDIcKFDhgIiSpxIsaLFixgzChgQkePGjxxDbhxAsqTJkyhTqlzJkgBJlwNgupwZsyaB
+mzhz6tzJs6fPn0ALEBBKdGiBo0iTKl3KtKnTp1ANFJBKdaqBq1izat3KtavXr10PGBBLdqzZA2jT
+ql3Ltq3bt3DdIjgwty7duwjq6s3Lt6/fv4ADCx6MIEHhw4YTJF5ceLHix5AjS55MubLly5gza97M
+ubPnz6BDix5NurTp06hTq17NurVr1wMbRjRIEOJs2bdta9xdUeTHjiA9XgxZEuRIk8dZKk8p86Vz
+5zBPzpxOPSZN6kCza8dZVOjQ7TePfv/vDrW8+arop5pXelU9erDw45edbzb+Vfrz4+rfj7e/XbRz
+ARhgWnYViBdfdOWVIGEMBpYYXw8eJmFfjD2oWGMXvqbhhhx26OGHIIYo4ogklmjiiZEltJBstNWG
+20MSwcjbjBL5JhJJxmWEI3HB7bjcjyg1V9OQQ0Zn0nU2WYckduA1mVN33zlp1HjjrWelU+lVdaVV
+7rln35de4VeffWidZSZ/aMrlH4H9AdiWggbqdeBeDdZpmF935gkhYBYiluGfjqEo6KCEFmrooYgm
+quiio6nIYosJQbTipDHSaGmNwAF3o0Y+juRpcUCG+pyQJUVnpHTTWZfkklK2SmVRUkL/SdSWtCKV
+pXq03grmrluJKdaXZfo6VprEummgm3cl++aBCTa714J1RttnXnpO+FefFWbYGIaMduvtt+CGK+64
+5IbY0EOQOmqbjLqteClGNuboG7yf7picj6Iu1xxNpSp3XXU4raqkq05CGausRtWaa5daXtlelrxG
+fKaZYApb7MVrBqixsgOyGaezz0Yr8rV7SngnnoilDCi35bbs8sswxyzzzCGii1tGlOpmkbvv0rgp
+cSzVe2++RKu05MA6qXqT0gQ3nR2tCSsVtcJUH8WrVVthLfHWWKE5LMZg7wennII5mzGCaJM9MoPV
+6jmZyn4GKjfNdNdt9914572oQwdp/5Qzz+32/JtHhFsk3ETLCX3S0EULeap0AiOdE9NMO235TlA3
+NXXVWD51dVdac/3Vr2F5HfbpcCmYbIF/MTs2tHT6BfvafFJr+9zZbvsYhizr7fvvwAcv/PCYxaYi
+4DvfBjjyPR/uc6aJ27t40UEyt9LRPNl0tOSXOw315uJxfp7nYFrNVeiihzW66W99jTqxGwsoYF/y
+v07ngiDPTnuEE7Ydme4VAmDuAEW8AhrwgAhMYKH4ppBIXYRS7Fqe4N5VuBqt5FM94hH1WsJBViVt
+adjjXve0450nge8pJzyh+Kz0ufOlT3TvC1YMi3Us1clObflLG+0Gw7+SmYxa/7OQEG9XhrveKfCI
+SEyiEpeoGXQx8IGzkRHzKjXBGcWLcZ3q0XGwuMEjXS9JL/lgqlRVuYCN8Gk8mZV5wsMUFa7wPOVD
+38NeuDX2ucV9M0RTnDRGPxzCaU45jN0OUVayPEFGZdlyDCIFyMRGOvKRkBxeQAAAOw==
+
+------=_NextPart_000_0000_01C5614C.8A077340--

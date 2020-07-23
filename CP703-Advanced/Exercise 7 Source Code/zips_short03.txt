@@ -1,0 +1,19 @@
+#
+# The 1990 Zip Code by State file is comma separated values, ASCII text, one record per line. 
+# The field/record layout is as follows:
+#
+#      Field 1 - State Fips Code
+#      Field 2 - 5-digit Zipcode
+#      Field 3 - State Abbreviation
+#      Field 4 - Zipcode Name
+#      Field 5 - Longitude in Decimal Degrees (West is assumed, no minus sign)
+#      Field 6 - Latitude in Decimal Degrees (North is assumed, no plus sign)
+#      Field 7 - 1990 Population (100%)
+#      Field 8 - Allocation Factor (decimal portion of state within zipcode)
+#
+# For complete details see:
+#    http://landview.census.gov/geo/www/gazetteer/places.html
+#
+"27","55767","MN","MOOSE LAKE", 92.746648, 46.44724, 2699, 0.000617 
+"53","99362","WA","WALLA WALLA",118.331544,46.061373,34993,0.00719 
+"06","90024","CA","LOS ANGELES",118.440796,34.063691,38370,0.001289 

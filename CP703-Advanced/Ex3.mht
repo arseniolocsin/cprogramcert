@@ -1,0 +1,113 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: C:\uwext\spr2005\distrib\homework\ex3.c.html
+Date: Wed, 13 Apr 2005 18:11:12 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/homework/ex3.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2527
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>C:\uwext\spr2005\distrib\homework\ex3.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2627" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * File: ex3.c</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * System: C Programming Advanced, Exercise =
+3</FONT>
+<FONT color=3D#80a0ff> * </FONT>
+<FONT color=3D#80a0ff> * Description: This program tests the =
+ZIPS_parse_zips_rec function.</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * Revision History</FONT>
+<FONT color=3D#80a0ff> * Date         Programmer Name     =
+Description</FONT>
+<FONT color=3D#80a0ff> * -----------  ------------------  =
+----------------</FONT>
+<FONT color=3D#80a0ff> * 01-Apr-2005  Some Programmer     =
+Original</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdlib.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;zips.h&gt;</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+*****************</FONT>
+<FONT color=3D#80a0ff> * constants</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+*</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+*****************</FONT>
+<FONT color=3D#80a0ff> * typedefs</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+*</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+*****************</FONT>
+<FONT color=3D#80a0ff> * prototypes</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+*</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+*****************</FONT>
+<FONT color=3D#80a0ff> * main function</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+*</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    ZIPS_data_t zips_rec;
+    <FONT color=3D#60ff60>char</FONT> * zips_str =3D <FONT =
+color=3D#ffa0a0>"</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>44</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>,</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>02804</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>,</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>RI</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>,</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>ASHAWAY</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa0a0>,71.783745,41.423054,2472,0.002463 "</FONT>;
+
+    <FONT color=3D#ffff00>if</FONT> ( ZIPS_parse_zips_rec( zips_str, =
+&amp;zips_rec ) )
+    {
+        printf( <FONT color=3D#ffa0a0>"Parsed this string: </FONT><FONT =
+color=3D#ffa500>%s</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, zips_str );
+        ZIPS_print_recs( &amp;zips_rec, <FONT color=3D#ffa0a0>1</FONT> =
+);
+    }
+    <FONT color=3D#ffff00>else</FONT>
+    {
+        fprintf( <FONT color=3D#ffa0a0>stderr</FONT>, <FONT =
+color=3D#ffa0a0>"Failed to parse string &gt;&gt;</FONT><FONT =
+color=3D#ffa500>%s</FONT><FONT color=3D#ffa0a0>&lt;&lt;</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, zips_str );
+    }
+
+    <FONT color=3D#ffff00>return</FONT> <FONT =
+color=3D#ffa0a0>EXIT_SUCCESS</FONT>;
+}
+
+</PRE></BODY></HTML>

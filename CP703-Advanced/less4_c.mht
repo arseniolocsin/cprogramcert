@@ -1,0 +1,103 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less4.c.html
+Date: Wed, 25 May 2005 17:08:51 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less4.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less4.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+*******************</FONT>
+<FONT color=3D#80a0ff> * File: less4.c</FONT>
+<FONT color=3D#80a0ff> * Description:</FONT>
+<FONT color=3D#80a0ff> *   This program writes and reads an int array to =
+stdout and a BINARY file</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    <FONT color=3D#60ff60>FILE</FONT> * out_file =3D <FONT =
+color=3D#ffa0a0>NULL</FONT>;
+    <FONT color=3D#60ff60>int</FONT>  inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+    <FONT color=3D#60ff60>int</FONT>  out_data[<FONT =
+color=3D#ffa0a0>5</FONT>] =3D { <FONT color=3D#ffa0a0>1</FONT>, <FONT =
+color=3D#ffa0a0>2</FONT>, <FONT color=3D#ffa0a0>3</FONT>, <FONT =
+color=3D#ffa0a0>4</FONT>, <FONT color=3D#ffa0a0>5</FONT> };
+    <FONT color=3D#60ff60>int</FONT> in_data[<FONT =
+color=3D#ffa0a0>5</FONT>];
+    <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>     * write out_data to standard out as =
+ASCII</FONT>
+<FONT color=3D#80a0ff>     </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; <FONT color=3D#ffa0a0>5</FONT>; inx =
+++ )
+      fprintf( <FONT color=3D#ffa0a0>stdout</FONT>, <FONT =
+color=3D#ffa0a0>"out_data =3D=3D&gt;</FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, out_data[inx] );
+    <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>     * open the file in write mode</FONT>
+<FONT color=3D#80a0ff>     </FONT><FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#ffff00>if</FONT> ( (out_file =3D fopen( <FONT =
+color=3D#ffa0a0>"mydata.bin"</FONT>, <FONT color=3D#ffa0a0>"wb"</FONT> =
+)) =3D=3D <FONT color=3D#ffa0a0>NULL</FONT> )
+    {
+      fprintf( <FONT color=3D#ffa0a0>stderr</FONT>, <FONT =
+color=3D#ffa0a0>"Could not open mydata.bin"</FONT> );
+    }
+    <FONT color=3D#ffff00>else</FONT>
+    {
+    <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>     * write out_data to the file as BINARY</FONT>
+<FONT color=3D#80a0ff>     </FONT><FONT color=3D#80a0ff>*/</FONT>
+      fwrite( out_data, <FONT color=3D#ffff00>sizeof</FONT>( <FONT =
+color=3D#60ff60>int</FONT> ), <FONT color=3D#ffa0a0>5</FONT>, out_file =
+);
+    <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>     * OR, write each item individually</FONT>
+<FONT color=3D#80a0ff>     *  for ( inx =3D 0; inx &lt; 5; inx++ =
+)</FONT>
+<FONT color=3D#80a0ff>     *    fwrite( &amp;out_data[inx], sizeof( int =
+), 1, out_file );</FONT>
+<FONT color=3D#80a0ff>     </FONT><FONT color=3D#80a0ff>*/</FONT>
+      fclose( out_file );
+      out_file =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+      <FONT color=3D#ffff00>if</FONT> ( (out_file =3D fopen( <FONT =
+color=3D#ffa0a0>"mydata.bin"</FONT>, <FONT color=3D#ffa0a0>"rb"</FONT> =
+)) =3D=3D <FONT color=3D#ffa0a0>NULL</FONT> )
+      {
+        fprintf( <FONT color=3D#ffa0a0>stderr</FONT>, <FONT =
+color=3D#ffa0a0>"Could not open mydata.bin"</FONT> );
+      }
+      <FONT color=3D#ffff00>else</FONT>
+      {
+         fread( in_data, <FONT color=3D#ffff00>sizeof</FONT>( <FONT =
+color=3D#60ff60>int</FONT> ), <FONT color=3D#ffa0a0>5</FONT>, out_file  =
+);
+         <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; <FONT color=3D#ffa0a0>5</FONT>; inx =
+++ )
+           fprintf( <FONT color=3D#ffa0a0>stdout</FONT>, <FONT =
+color=3D#ffa0a0>"in_data =3D=3D&gt;</FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, in_data[inx] );
+      }
+    }
+}
+</PRE></BODY></HTML>

@@ -1,0 +1,181 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less11-2.c.html
+Date: Wed, 25 May 2005 17:10:46 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less11-2.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less11-2.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+***************</FONT>
+<FONT color=3D#80a0ff> * FILE:  less11-2.c</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * DESCRIPTION: Program to demonstrate qsort and =
+binary search</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdlib.h&gt;</FONT>
+
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+print_ints( <FONT color=3D#60ff60>int</FONT> int_arr[], <FONT =
+color=3D#60ff60>int</FONT> num );
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> =
+comp_ints( <FONT color=3D#60ff60>const</FONT> <FONT =
+color=3D#60ff60>void</FONT> * left, <FONT color=3D#60ff60>const</FONT> =
+<FONT color=3D#60ff60>void</FONT> * right );
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> * =
+search_ints( <FONT color=3D#60ff60>int</FONT> * array, <FONT =
+color=3D#60ff60>int</FONT> num, <FONT color=3D#60ff60>int</FONT> =
+num_to_find );
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    <FONT color=3D#60ff60>int</FONT> int_arr[] =3D { <FONT =
+color=3D#ffa0a0>15</FONT>, <FONT color=3D#ffa0a0>3</FONT>, <FONT =
+color=3D#ffa0a0>14</FONT>, <FONT color=3D#ffa0a0>26</FONT>, <FONT =
+color=3D#ffa0a0>37</FONT>, <FONT color=3D#ffa0a0>48</FONT>, <FONT =
+color=3D#ffa0a0>10</FONT>, <FONT color=3D#ffa0a0>12</FONT>, <FONT =
+color=3D#ffa0a0>1</FONT>, <FONT color=3D#ffa0a0>91</FONT> };
+    <FONT color=3D#60ff60>int</FONT> * val =3D <FONT =
+color=3D#ffa0a0>NULL</FONT>;
+
+    print_ints( int_arr, <FONT color=3D#ffa0a0>10</FONT> );
+
+    qsort( int_arr, <FONT color=3D#ffa0a0>10</FONT>, <FONT =
+color=3D#ffff00>sizeof</FONT>(<FONT color=3D#60ff60>int</FONT>), =
+comp_ints );
+
+    print_ints( int_arr, <FONT color=3D#ffa0a0>10</FONT> );
+
+    val =3D search_ints( int_arr, <FONT color=3D#ffa0a0>10</FONT>, <FONT =
+color=3D#ffa0a0>3</FONT>  );
+
+    printf( <FONT color=3D#ffa0a0>"found the </FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa0a0>!!</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, *val );
+}
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+***************</FONT>
+<FONT color=3D#80a0ff> * search_ints - searches the integer array for =
+the integer to find</FONT>
+<FONT color=3D#80a0ff> * Input:</FONT>
+<FONT color=3D#80a0ff> *      int_arr : the array to search</FONT>
+<FONT color=3D#80a0ff> *      num : number of integers in the =
+array</FONT>
+<FONT color=3D#80a0ff> *      num_to_find: the number to find in the =
+array</FONT>
+<FONT color=3D#80a0ff> * Return:</FONT>
+<FONT color=3D#80a0ff> *      pointer to found integer OR NULL if number =
+not found</FONT>
+<FONT color=3D#80a0ff> =
+***********************************************************************</=
+FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> * =
+search_ints( <FONT color=3D#60ff60>int</FONT> * array, <FONT =
+color=3D#60ff60>int</FONT> count, <FONT color=3D#60ff60>int</FONT> =
+num_to_find )
+{
+    <FONT color=3D#60ff60>int</FONT> * val =3D <FONT =
+color=3D#ffa0a0>NULL</FONT>;
+    <FONT color=3D#60ff60>int</FONT> top =3D count;
+    <FONT color=3D#60ff60>int</FONT> bottom =3D <FONT =
+color=3D#ffa0a0>0</FONT>;
+
+    <FONT color=3D#ffff00>while</FONT>( bottom &lt;=3D top &amp;&amp; =
+val =3D=3D <FONT color=3D#ffa0a0>NULL</FONT>)
+    {
+        <FONT color=3D#60ff60>int</FONT> middle =3D (bottom + top)/ =
+<FONT color=3D#ffa0a0>2</FONT>;
+
+        <FONT color=3D#ffff00>if</FONT> ( array[middle] =3D=3D =
+num_to_find ) {
+            val =3D array+middle;
+        }
+        <FONT color=3D#ffff00>else</FONT> <FONT =
+color=3D#ffff00>if</FONT> ( array[middle] &lt; num_to_find ) {
+            bottom =3D middle +<FONT color=3D#ffa0a0>1</FONT>;
+        }
+        <FONT color=3D#ffff00>else</FONT> {
+            top =3D middle  - <FONT color=3D#ffa0a0>1</FONT>;
+        }
+    }
+
+    <FONT color=3D#ffff00>return</FONT> val;
+}
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+***************</FONT>
+<FONT color=3D#80a0ff> * print_ints - prints an array of integers</FONT>
+<FONT color=3D#80a0ff> * Input:</FONT>
+<FONT color=3D#80a0ff> *      int_arr : the array to search</FONT>
+<FONT color=3D#80a0ff> *      num : number of integers in the =
+array</FONT>
+<FONT color=3D#80a0ff> =
+***********************************************************************</=
+FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>void</FONT> =
+print_ints( <FONT color=3D#60ff60>int</FONT> int_arr[], <FONT =
+color=3D#60ff60>int</FONT> num )
+{
+    <FONT color=3D#60ff60>int</FONT> inx;
+    printf( <FONT color=3D#ffa0a0>"the int arr =3D=3D&gt; "</FONT> );
+    <FONT color=3D#ffff00>for</FONT> ( inx =3D <FONT =
+color=3D#ffa0a0>0</FONT>; inx &lt; num ; inx ++ )
+        printf( <FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>%d</FONT><FONT color=3D#ffa0a0>  "</FONT>, int_arr[inx] =
+);
+    puts( <FONT color=3D#ffa0a0>""</FONT> );
+}
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+***************</FONT>
+<FONT color=3D#80a0ff> * comp_ints - compares two integers for the qsort =
+function.</FONT>
+<FONT color=3D#80a0ff> * Input:</FONT>
+<FONT color=3D#80a0ff> *      left : void pointer to an integer</FONT>
+<FONT color=3D#80a0ff> *      right : void pointer to another =
+integer</FONT>
+<FONT color=3D#80a0ff> * Return:</FONT>
+<FONT color=3D#80a0ff> *      0 : there equal</FONT>
+<FONT color=3D#80a0ff> *     -1 : left &lt; right</FONT>
+<FONT color=3D#80a0ff> *      1 : left &gt; right</FONT>
+<FONT color=3D#80a0ff> =
+***********************************************************************</=
+FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>static</FONT> <FONT color=3D#60ff60>int</FONT> =
+comp_ints( <FONT color=3D#60ff60>const</FONT> <FONT =
+color=3D#60ff60>void</FONT> * left, <FONT color=3D#60ff60>const</FONT> =
+<FONT color=3D#60ff60>void</FONT> * right )
+{
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> </FONT>
+<FONT color=3D#80a0ff>   This isn't ANSI but common: return *(int *)left =
+- *(int *)right;</FONT>
+<FONT color=3D#80a0ff>*/</FONT>
+    <FONT color=3D#60ff60>int</FONT> lleft =3D *(<FONT =
+color=3D#60ff60>int</FONT> *)left;
+    <FONT color=3D#60ff60>int</FONT> lright =3D *(<FONT =
+color=3D#60ff60>int</FONT> *)right;
+    <FONT color=3D#ffff00>return</FONT> (lleft &lt; lright) ? -<FONT =
+color=3D#ffa0a0>1</FONT> : (lleft &gt; lright) ? <FONT =
+color=3D#ffa0a0>1</FONT> : <FONT color=3D#ffa0a0>0</FONT>;
+}
+</PRE></BODY></HTML>

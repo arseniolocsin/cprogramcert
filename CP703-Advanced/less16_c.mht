@@ -1,0 +1,87 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less16.c.html
+Date: Wed, 25 May 2005 17:11:06 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less16.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less16.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#cccccc bgColor=3D#000000><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE:  less16.c</FONT>
+<FONT color=3D#80a0ff> * Description:  enumerated types</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#60ff60>typedef</FONT> <FONT color=3D#60ff60>enum</FONT> =
+color_tag
+{
+    RED =3D <FONT color=3D#ffa0a0>12</FONT>,    <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> 12 </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+    GREEN,       <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> =
+13 </FONT><FONT color=3D#80a0ff>*/</FONT>
+    BLUE,        <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> =
+14 </FONT><FONT color=3D#80a0ff>*/</FONT>
+    PURPLE,      <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> =
+15 </FONT><FONT color=3D#80a0ff>*/</FONT>
+    WHITE,       <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> =
+16 </FONT><FONT color=3D#80a0ff>*/</FONT>
+    BLACK,       <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> =
+17 </FONT><FONT color=3D#80a0ff>*/</FONT>
+    RED2 =3D RED,  <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> =
+12 OK - RED2 is a synonym for RED     </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+    RED3         <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> =
+13 OK - RED3 is a synonym for GREEN?? </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+} COLOR_t;
+
+<FONT color=3D#60ff60>static</FONT> COLOR_t get_color( COLOR_t my_color =
+);
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    COLOR_t my_color =3D WHITE;
+    <FONT color=3D#60ff60>int</FONT> other_color =3D WHITE;
+
+   <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>    * can use enum identifiers like constant =
+integers</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    other_color =3D RED;
+
+   <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> </FONT>
+<FONT color=3D#80a0ff>    * or, you can have variables of an enumerated =
+type</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    my_color =3D get_color( my_color );
+    my_color =3D get_color( RED );
+    my_color =3D get_color( <FONT color=3D#ffa0a0>12</FONT> );
+
+   <FONT color=3D#80a0ff>/*</FONT>
+<FONT color=3D#80a0ff>    * a C compiler will generally allow these =
+without warning</FONT>
+<FONT color=3D#80a0ff>    </FONT><FONT color=3D#80a0ff>*/</FONT>
+    my_color =3D get_color( -<FONT color=3D#ffa0a0>12</FONT>);
+}
+<FONT color=3D#60ff60>static</FONT> COLOR_t get_color( COLOR_t my_color =
+)
+{
+    <FONT color=3D#ffff00>if</FONT> ( my_color =3D=3D RED )
+        <FONT color=3D#ffff00>return</FONT> PURPLE;
+    <FONT color=3D#ffff00>else</FONT>
+        <FONT color=3D#ffff00>return</FONT> GREEN;
+}
+</PRE></BODY></HTML>

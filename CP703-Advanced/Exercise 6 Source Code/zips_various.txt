@@ -1,0 +1,63 @@
+#
+# The 1990 Zip Code by State file is comma separated values, ASCII text, one record per line. 
+# The field/record layout is as follows:
+#
+#      Field 1 - State Fips Code
+#      Field 2 - 5-digit Zipcode
+#      Field 3 - State Abbreviation
+#      Field 4 - Zipcode Name
+#      Field 5 - Longitude in Decimal Degrees (West is assumed, no minus sign)
+#      Field 6 - Latitude in Decimal Degrees (North is assumed, no plus sign)
+#      Field 7 - 1990 Population (100%)
+#      Field 8 - Allocation Factor (decimal portion of state within zipcode)
+#
+# For complete details see:
+#    http://landview.census.gov/geo/www/gazetteer/places.html
+#
+# formatted as expected 
+"01","36026","AL","EQUALITY",86.105064,32.813908,1121,0.000277 
+"04","85539","AZ","MIAMI",110.881182,33.431928,4866,0.001328 
+"06","90024","CA","LOS ANGELES",118.440796,34.063691,38370,0.001289 
+"06","95073","CA","SOQUEL",121.950255,37.003525,8143,0.000274 
+#
+# some leading and trailing spaces should be OK 
+       "01","36026","AL","EQUALITY",86.105064,32.813908,1121,0.000277 
+"04",     "85539",    "AZ"      ,"MIAMI     ",     110.881182, 33.431928,4866,0.001328 
+ "06","90024","CA","LOS ANGELES",118.440796,34.063691,38370,0.001289 
+  "06", "95073", "CA", "SOQUEL", 121.950255, 37.003525, 8143, 0.000274 
+#
+# some fields that are too long 
+"01","36026","ALLLLLL","EQUALITY",86.105064,32.813908,1121,0.000277 
+"04","85539","AZ","VERY LONG NAME OF IS TOO LONG FOR THE FIELD MIAMI",110.881182,33.431928,4866,0.001328 
+
+# bad number fields 
+"01","bad-zip","AL","EQUALITY",86.105064,32.813908,1121,0.000277 
+"04","85539","AZ","MIAMI",bad-lat,33.431928,4866,0.001328 
+"06","90024","CA","LOS ANGELES",118.440796,bad-long,38370,0.001289 
+"06","95073","CA","SOQUEL",121.950255,37.003525,bad-pop,0.000274 
+"12","33147","FL","MIAMI",80.236558,25.850675,49395,bad-factor
+"bad-fip","99362","WA","WALLA WALLA",118.331544,46.061373,34993,0.00719 
+
+# missing leading fields 
+"36026","AL","EQUALITY",86.105064,32.813908,1121,0.000277 
+"AZ","MIAMI",110.881182,33.431928,4866,0.001328 
+LOS ANGELES",118.440796,34.063691,38370,0.001289 
+121.950255,37.003525,8143,0.000274 
+
+# missing non-leading fields 
+"01","36026","EQUALITY",86.105064,32.813908,1121,0.000277 
+"04","85539","AZ",110.881182,33.431928,4866,0.001328 
+"06","90024","CA","LOS ANGELES",34.063691,38370,0.001289 
+"06","95073","CA","SOQUEL",121.950255,8143,0.000274 
+"53","99362","WA","WALLA WALLA",118.331544,46.061373,34993
+
+# extra fields 
+"53","99362","WA","WALLA WALLA",118.331544,46.061373,34993,0.00719,"extra stuff"
+
+# really whacked 
+@#$%^&*()(*&^T%$@#$%^&*((*&^%
+\n
+\0
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+53,99362,WA,WALLA WALLA,118.331544,46.061373,34993
+

@@ -1,0 +1,54 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: Iterators: Introduction
+Date: Wed, 17 Aug 2005 20:14:30 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/jstraub/dsa/slides/Iterators/110Introduction.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Iterators: Introduction</TITLE>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2722" name=3DGENERATOR></HEAD>
+<BODY>
+<P><FONT size=3D-1><B>C Programming: Data Structures</B> </FONT>
+<BLOCKQUOTE>
+  <P><FONT size=3D+2>
+  <CENTER><U>Iterators</U></CENTER>
+  <P>An <I>iterator</I> is a pointer to an element in a collection.=20
+  <P>An iterator can be used to traverse some range of elements.=20
+  <P>Iterators fall into several categories:=20
+  <UL>
+    <LI>A <I>forward iterator</I> may be used to traverse toward the end =
+of a=20
+    collection; a <I>reverse iterator</I> may be used to traverse toward =
+the=20
+    beginning of a collection; a <I>bidirectional iterator</I> may be =
+used to=20
+    traverse both forward and reverse.=20
+    <LI>A <I>random access iterator</I> may be used to access =
+non-contiguous=20
+    elements in a collection.=20
+    <LI>A <I>read-only iterator</I> may only be used to interrogate an =
+element=20
+    in a collection; a <I>read/write iterator</I> may be used to =
+interrogate or=20
+    change an element in a collection.=20
+    <LI>A change to a collection may or may not invalidate an iterator.=20
+</LI></UL></BLOCKQUOTE></FONT>
+<P><FONT size=3D-1><B>Iterators<B> </FONT><!-- browser trailer start -->
+<HR>
+
+<CENTER>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/100Ref=
+erence.html">=20
+prev </A>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/all.ht=
+ml">=20
+index </A>&nbsp;&nbsp;&nbsp;<A=20
+href=3D"http://faculty.washington.edu/jstraub/dsa/slides/Iterators/120Int=
+roduction.html">=20
+next </A></CENTER><!-- browser trailer end --></B></B></BODY></HTML>

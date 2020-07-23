@@ -1,0 +1,235 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: linked_list.c.html
+Date: Wed, 25 May 2005 17:24:21 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/homework/linked_list.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>linked_list.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#c0c0c0 bgColor=3D#000040><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * File: linked_list.c</FONT>
+<FONT color=3D#80a0ff> *</FONT>
+<FONT color=3D#80a0ff> * System: abstract linked list</FONT>
+<FONT color=3D#80a0ff> * </FONT>
+<FONT color=3D#80a0ff> * Description:  simple linked list library</FONT>
+<FONT color=3D#80a0ff> *   </FONT>
+<FONT color=3D#80a0ff> * Revision History</FONT>
+<FONT color=3D#80a0ff> * Date         Programmer Name     =
+Description</FONT>
+<FONT color=3D#80a0ff> * -----------  ------------------  =
+----------------</FONT>
+<FONT color=3D#80a0ff> * 01-Apr-2005  Some Programmer     =
+Original</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+***</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdlib.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;string.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;linked_list.h&gt;</FONT>
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>---------------------------------------------------------=
+------------------*</FONT>
+<FONT color=3D#80a0ff> * item_s: internal list item type </FONT>
+<FONT color=3D#80a0ff> =
+*------------------------------------------------------------------------=
+---</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>typedef</FONT> <FONT color=3D#60ff60>struct</FONT> =
+item_s
+{
+    <FONT color=3D#60ff60>struct</FONT> item_s * next;
+    <FONT color=3D#60ff60>void</FONT> * user_data;
+} item_t;
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>---------------------------------------------------------=
+------------------*</FONT>
+<FONT color=3D#80a0ff> * LINKED_LIST_s: internal list type</FONT>
+<FONT color=3D#80a0ff> =
+*------------------------------------------------------------------------=
+---</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>typedef</FONT> <FONT color=3D#60ff60>struct</FONT> =
+LINKED_LIST_s
+{
+    item_t * head;
+    item_t * tail;
+    <FONT color=3D#60ff60>char</FONT> =
+list_name[LINKED_LIST_NAME_LEN+<FONT color=3D#ffa0a0>1</FONT>];
+} LINKED_LIST_t;
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>---------------------------------------------------------=
+------------------*</FONT>
+<FONT color=3D#80a0ff> * LINKED_LIST_create_list </FONT>
+<FONT color=3D#80a0ff> =
+*------------------------------------------------------------------------=
+---</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>extern</FONT> LINKED_LIST_p_t =
+LINKED_LIST_create_list(
+        <FONT color=3D#60ff60>const</FONT> <FONT =
+color=3D#60ff60>char</FONT> * list_name  <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; - list name or =
+NULL </FONT><FONT color=3D#80a0ff>*/</FONT>
+)
+{
+    LINKED_LIST_p_t ptr =3D malloc( <FONT color=3D#ffff60>sizeof</FONT>( =
+LINKED_LIST_t) );
+    <FONT color=3D#ffff60>if</FONT> ( ptr )
+    {
+        ptr-&gt;head =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+        ptr-&gt;tail =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+        <FONT color=3D#ffff60>if</FONT> ( list_name )
+        {
+            strncpy( ptr-&gt;list_name, list_name, LINKED_LIST_NAME_LEN =
+);
+            ptr-&gt;list_name[LINKED_LIST_NAME_LEN] =3D <FONT =
+color=3D#ffa500>'\0'</FONT>;
+        }
+    }
+    <FONT color=3D#ffff60>return</FONT> ptr;
+}
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>---------------------------------------------------------=
+------------------*</FONT>
+<FONT color=3D#80a0ff> * LINKED_LIST_add_to_list </FONT>
+<FONT color=3D#80a0ff> =
+*------------------------------------------------------------------------=
+---</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>extern</FONT> <FONT color=3D#60ff60>void</FONT> =
+LINKED_LIST_add_to_list(
+        LINKED_LIST_p_t list_head,   <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; the list =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#60ff60>void</FONT> * user_data             <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; pointer to =
+user object </FONT><FONT color=3D#80a0ff>*/</FONT>
+)
+{
+    item_t * new_item =3D malloc( <FONT color=3D#ffff60>sizeof</FONT>( =
+item_t ) );
+    <FONT color=3D#ffff60>if</FONT> ( new_item =3D=3D <FONT =
+color=3D#ffa0a0>NULL</FONT> )
+        abort();
+
+    new_item-&gt;user_data =3D user_data;
+    new_item-&gt;next =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+
+    <FONT color=3D#ffff60>if</FONT> ( list_head-&gt;head =3D=3D <FONT =
+color=3D#ffa0a0>NULL</FONT> )
+    {
+        list_head-&gt;head =3D new_item;
+        list_head-&gt;tail =3D new_item;
+    }
+    <FONT color=3D#ffff60>else</FONT>
+    {
+        list_head-&gt;tail-&gt;next =3D new_item;
+        list_head-&gt;tail =3D new_item;
+    }
+}
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>---------------------------------------------------------=
+------------------*</FONT>
+<FONT color=3D#80a0ff> * LINKED_LIST_operate_on_list </FONT>
+<FONT color=3D#80a0ff> =
+*------------------------------------------------------------------------=
+---</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>extern</FONT> <FONT color=3D#60ff60>void</FONT> =
+LINKED_LIST_operate_on_list(
+        LINKED_LIST_p_t list_head,           <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; the list =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#60ff60>void</FONT> (*item_operate_proc)( <FONT =
+color=3D#60ff60>void</FONT> * )  <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> &lt;I&gt; proc to apply to each list item </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+)
+{
+    item_t * list_item =3D list_head-&gt;head;
+
+    <FONT color=3D#ffff60>while</FONT>( list_item )
+    {
+        item_operate_proc( list_item-&gt;user_data );
+        list_item =3D list_item-&gt;next;
+    }
+}
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>---------------------------------------------------------=
+------------------*</FONT>
+<FONT color=3D#80a0ff> * LINKED_LIST_find_item_in_list </FONT>
+<FONT color=3D#80a0ff> =
+*------------------------------------------------------------------------=
+---</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>extern</FONT> <FONT color=3D#60ff60>void</FONT> * =
+LINKED_LIST_find_item_in_list(
+        LINKED_LIST_p_t list_head,                                  =
+<FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; the list =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#60ff60>int</FONT> (*item_find_proc)( <FONT =
+color=3D#60ff60>void</FONT> * user_data, <FONT =
+color=3D#60ff60>void</FONT> * key_data ), <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; find proc =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#60ff60>void</FONT> * key_data                     =
+                        <FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff> &lt;I&gt; pass through data </FONT><FONT =
+color=3D#80a0ff>*/</FONT>
+)
+{
+    item_t * list_item =3D list_head-&gt;head;
+
+    <FONT color=3D#ffff60>while</FONT> ( list_item &amp;&amp; =
+!item_find_proc( list_item-&gt;user_data, key_data ) )
+       list_item =3D list_item-&gt;next;
+    <FONT color=3D#ffff60>return</FONT> =
+list_item?list_item-&gt;user_data:NULL;
+}
+
+<FONT color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>---------------------------------------------------------=
+------------------*</FONT>
+<FONT color=3D#80a0ff> * LINKED_LIST_destroy_list </FONT>
+<FONT color=3D#80a0ff> =
+*------------------------------------------------------------------------=
+---</FONT><FONT color=3D#80a0ff>*/</FONT>
+<FONT color=3D#60ff60>extern</FONT> <FONT color=3D#60ff60>void</FONT> =
+LINKED_LIST_destroy_list(
+        LINKED_LIST_p_t * list_head,                  <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; the list =
+</FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#60ff60>void</FONT> (*item_destroy_proc)( <FONT =
+color=3D#60ff60>void</FONT> * user_data ) <FONT =
+color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> &lt;I&gt; destroy proc =
+OR NULL </FONT><FONT color=3D#80a0ff>*/</FONT>
+)
+{
+    <FONT color=3D#ffff60>while</FONT>( (*list_head)-&gt;head )
+    {
+        item_t * list_item =3D (*list_head)-&gt;head;
+        (*list_head)-&gt;head =3D list_item-&gt;next;
+
+        <FONT color=3D#ffff60>if</FONT> ( item_destroy_proc )
+            item_destroy_proc( list_item-&gt;user_data );
+
+        free( list_item );
+    }
+    free( *list_head );
+    *list_head =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+}
+
+</PRE></BODY></HTML>

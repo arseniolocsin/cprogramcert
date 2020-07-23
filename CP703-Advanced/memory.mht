@@ -1,0 +1,333 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: 
+Date: Wed, 13 Apr 2005 18:01:32 -0700
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----=_NextPart_000_0000_01C54052.D2EEF9E0"
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2527
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_0000_01C54052.D2EEF9E0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/syllabus/memory.html
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.2627" name=3DGENERATOR></HEAD>
+<BODY bgColor=3Dwhite>
+<TABLE cols=3D2 width=3D650 border=3D0>
+  <TBODY>
+  <TR>
+    <TD width=3D10>&nbsp;</TD>
+    <TD width=3D640><B>Alignment (H&amp;S 6.1.3)</B> </TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1>Some computers allow data objects to reside in =
+storage=20
+      at any address, regardless of the data's type. Others impose =
+<I>alignment=20
+      restrctions</I> on certain data types, requiring that objects of =
+those=20
+      types occupy only certain address. It is not unusal on a =
+byte-addressed=20
+      computer, for example, to required that 32-bit (4-byte) integers =
+be=20
+      located on address that are multiple of four. ... Failing to obey =
+the=20
+      alignment restrctions can result either in a run-time error or in=20
+      unexpected program behavior. Even when there are no alignment =
+restrctions=20
+      per se, there may be a performance penalty for using data on =
+unaligned=20
+      address, and therefore a C implementation may align data purely =
+for=20
+      efficiency. </FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1>In general, if the alignment requirement for a =
+type S is=20
+      at least as stringent as that for type D, then converting a =
+"pointer to=20
+      type S" to a "pointer to type D" is safe. If the alignment =
+requirement for=20
+      a type S is less stringent than that for type D, then the =
+conversion from=20
+      a "pointer to type S" to a "pointer to type D" could result in ... =
+
+      unexpected behavior. 1) An attempt to use the resulting pointer =
+... may=20
+      cause an error (Bus error program halt) 2) The hardware or =
+implementation=20
+      may "adjust" the destination pointer to be valid, usually by =
+forcing it=20
+      back to the nearest previous valid address. A subsequent =
+conversion back=20
+      ... may not recover the original pointer. </FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1><PRE>This works:
+     int var;
+     char * ptr;
+     ptr =3D &amp;var;
+    OR
+     struct some_tag var;
+     char * ptr;
+     ptr =3D &amp;var;
+
+     <U>Fetching or storing the object will succeed.</U>
+</PRE></FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1><PRE>This might not:
+    void func( char * some_arr )
+    {
+        int * ptr;
+        ptr =3D &amp;some_arr[0];
+    }
+
+    <U>Fetching or storing the object may not succeed.</U>
+
+</PRE></FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1><PRE>Another Example:
+    char bytes[6];
+    int * ptr =3D NULL;
+    int inx =3D 0;
+
+    ptr =3D (int *)&amp;bytes[0];
+    *ptr =3D 12345;
+    for ( inx =3D 0; inx &lt; 4 ; inx++ )
+        printf( "=3D=3D&gt; byte %d is %2x\n", inx, bytes[inx] );
+    printf( "=3D=3D&gt; value is %d\n", *ptr );
+
+    ptr =3D (int *)&amp;bytes[1];
+    *ptr =3D 12345;
+
+    for ( inx =3D 1; inx &lt; 5 ; inx++ )
+        printf( "=3D=3D&gt; byte %d is %2x\n", inx, bytes[inx] );
+    printf( "=3D=3D&gt; value is %d\n", *ptr );
+
+</PRE></FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1><PRE>Results:
+    =3D=3D&gt; byte 0 is 0
+    =3D=3D&gt; byte 1 is 0
+    =3D=3D&gt; byte 2 is 30
+    =3D=3D&gt; byte 3 is 39
+    =3D=3D&gt; value is 12345
+    =3D=3D&gt; Bus error(coredump)
+
+</PRE></FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;
+    <TD></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><B>Padding (H&amp;S 5.6.4)</B></TD>
+    <TD></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1>Holes, or padding, may appear between any two=20
+      consecutive components in the layout of a structure if necessary =
+to allow=20
+      proper alignment of components in memory. The bit patterns =
+appearing in=20
+      such holes are unpredictable, and may differ from structure to=20
+      structure..." </FONT></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><PRE><FONT size=3D-1>
+Example:
+    struct holes_s
+    {
+        char a;
+        int b;
+        char c;
+    } var;
+    printf( "=3D=3D&gt;(&amp;var.a=3D0x%p) (&amp;var.b=3D0x%p) =
+(&amp;var.c=3D0x%p) (bytes=3D%d)\n",
+        var.a, var.b, &amp;var.c, sizeof( struct holes_s ) );
+
+ =3D=3D&gt;(&amp;var.a=3D0x7b03b750) (&amp;var.b=3D0x7b03b754) =
+(&amp;var.c=3D0x7b03b758) (bytes=3D12)
+
+Another example:
+    struct holes_s
+    {
+        char a;
+        char c;
+        int b;
+    } var;
+    printf( "=3D=3D&gt;(&amp;var.a=3D0x%p) (&amp;var.b=3D0x%p) =
+(&amp;var.c=3D0x%p) (bytes=3D%d)\n",
+    var.a, var.b, &amp;var.c, sizeof( struct holes_s ) );
+
+=3D=3D&gt;(&amp;var.a=3D0x7b03b718) (&amp;var.b=3D0x7b03b71c) =
+(&amp;var.c=3D0x7b03b719) (bytes=3D8)
+
+
+</FONT></PRE></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;
+    <TD></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><B>Memory Fragmentation:</B> </TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><FONT size=3D-1>As memory is allocated and freed during normal =
+use, the=20
+      memory fragments can be found between used ones. When the memory =
+is=20
+      fragmented, you may have plenty of total free space, but each =
+block is too=20
+      small for the data you wish to store.=20
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD width=3D20></TD>
+          <TD><FONT face=3Dcourier size=3D-1>As memory is allocated: =
+<BR><IMG=20
+            =
+src=3D"http://faculty.washington.edu/sproedp/advc/syllabus/mem.gif">=20
+            </FONT></TD></TR>
+        <TR>
+          <TD width=3D20></TD>
+          <TD><FONT face=3Dcourier size=3D-1>As memory is de-allocated: =
+<BR><IMG=20
+            =
+src=3D"http://faculty.washington.edu/sproedp/advc/syllabus/memfrag.gif"> =
+
+            </FONT></TD></TR></TBODY></TABLE>Result: requests for memory =
+may fail.=20
+      </FONT></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD>&nbsp;
+    <TD></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><B>Products That Help Manage Memory:<B> </B></B></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><B>SmartHeap=AE</B> <FONT size=3D-1>
+      <P>SmartHeap is a fast (3X-100X faster than compiler-supplied =
+libraries),=20
+      portable (DOS, Windows 16/32, OS/2, Macintosh, UNIX), reliable,=20
+      ANSI-compliant malloc/operator new library. SmartHeap supports =
+multiple=20
+      memory pools, includes a fixed-size allocator, and is thread-safe. =
+
+      SmartHeap also includes comprehensive memory debugging APIs to =
+detect=20
+      leakage, overwrites, double-frees, wild pointers, out of memory,=20
+      references to previously freed memory, and other memory errors.=20
+      <P>(source: =
+http://www.microquill.com/frameit.html?prod_sh/intro_sh.htm)=20
+      </P></FONT></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><B>HeapAgent=AE</B> <FONT size=3D-1>
+      <P>The earlier you catch bugs, the less expensive they are. Every =
+tools=20
+      vendor says it. You've heard it. But in the arena of heap-related =
+errors,=20
+      such as leaks, overwrites, double-frees, and invalid references, =
+only=20
+      HeapAgent delivers it. Unlike other tools, which insert checking =
+functions=20
+      into your source or object code, HeapAgent instruments the heap. =
+This=20
+      technique has three powerful advantages. First, it provides =
+unsurpassed=20
+      heap error detection. Second, you DON'T need to recompile or =
+relink* --=20
+      HeapAgent works on regular debug builds! And third, HeapAgent can =
+check=20
+      for errors using idle cycles in a background thread -- WITHOUT =
+slowing=20
+      your app. The net net: HeapAgent automatically and invisibly runs =
+every=20
+      time you run or debug your app.=20
+      <P>(source: =
+http://www.microquill.com/frameit.html?prod_sh/intro_sh.htm)=20
+      </P></FONT></TD></TR>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><B>Rational Purify=AE</B> <FONT size=3D-1>
+      <P>Rational Purify for UNIX has long been the standard in run-time =
+error=20
+      detection for Sun, HP, and SGI UNIX platforms. In addition, =
+Siemens=20
+      Reliant UNIX 5.44 is now supported. With patented Object Code =
+Insertion=20
+      technology (OCI), Purify provides the most complete run-time error =
+and=20
+      memory leak detection available. It checks all application code, =
+including=20
+      source code, third party, shared and system libraries. Developers =
+can=20
+      eliminate run-time problems in all parts of their applications and =
+deliver=20
+      more reliable applications faster.=20
+      <P>(source: =
+http://www.rational.com/products/purify_unix/index.jtmpl)=20
+      </P></FONT></TD>
+  <TR>
+    <TD>&nbsp;</TD>
+    <TD><B>BoundsChecker=AE</B> <FONT size=3D-1>
+      <P>BoundsChecker Visual C++ Edition is the premier run-time error=20
+      detection and debugging tool for Visual C++ developers using =
+Windows NT,=20
+      Windows 2000 (RC2), or Windows 95/98. It speeds development and=20
+      time-to-market by automating the debugging process - right inside =
+Visual=20
+      C++ Developer Studio. BoundsChecker provides clear, detailed =
+analyses of=20
+      programming errors, many of which are unique to C++. It detects =
+and=20
+      diagnoses errors in static, stack and heap memory, and in memory =
+and=20
+      resource leaks. BoundsChecker validates over 8,700 APIs and OLE =
+Methods at=20
+      run-time, including the latest Windows APIs, ODBC, ActiveX, =
+DirectX, COM,=20
+      and Internet APIs.=20
+      <P>(source: http://www.numega.com/products/aed/vc.shtml)=20
+  </P></FONT></TD></TR></TBODY></TABLE></BODY></HTML>
+
+------=_NextPart_000_0000_01C54052.D2EEF9E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://faculty.washington.edu/sproedp/advc/syllabus/mem.gif
+
+R0lGODdhLAEUAKEAAP///wAAAAD//wAAACwAAAAALAEUAAAC/oSPqcvtD6OctNqLs968+w+G4kiW
+5omm6sq27gvH8kzXSYDn+s73/g8MCofEovGITCqXQFsjIIhKp9RqFGfNaqXYrZfa/YrDYivZey5X
+0+p1IPR2LqBtd33Lvl/pent/r5ZXJ3iHAyc39weoOEU4yMco4Pg1yQX5V1lmCBKHiHBZCIop2pc5
+RhqI6sdoStnp8eoJoHoaaWm7aNtqRtvYW4u7+RHr+YtnDKyL7MqKvJv1rCUMK/vZjCu5jKZ9fK3J
+zYs93UGMCO4rfh4erJ7LHBkNXa4x79SenZ7P7p2sGM97qJqBe/9WwbuHzp8zhPjYBRRIkKE7fgcp
+blOW7mE1HiYcO3r8CDKkyJE9BJo8iTKlypUsW7p8CTOmTBYFAAA7
+
+------=_NextPart_000_0000_01C54052.D2EEF9E0
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://faculty.washington.edu/sproedp/advc/syllabus/memfrag.gif
+
+R0lGODdhLAEUAKEAAP///wAAAAD//wAAACwAAAAALAEUAAAC/oSPqcvtD6OctNqLs968+w+G4kiW
+5omm6sq27gvH8kzXSYDn+s73/g8MCofEovGITCqXQFsjIIhKp9RqFPfBWbdcKdaj7YoF30h4LD6j
+04FQ27mArrdljnpOf3fu+KsewtfnJ8hVtwcXRzhlqBGoyJjhOAfJIIln2UcZiaggp0j2t4F5Gdro
++Vj6dPo5OpnayHnz6Ze1Oqtp0dqFe2NLqIvGmxuL4EtaO0slPAGcx2ycCS24TPHqJB1snYt9DMbN
+9pw8KE4Lol3zvXtenZ6NfLt+0FzYPkbNTCyffA9YD+69L56BeXnIlcuSb2DAd+T4PSCoTCAAiFUo
+WnEIKOHELYUADWJUxdGMv4IeJUow+YKJypUsW7p8CTNmD400a9q8iTOnzp08e/r8CRRCAQA7
+
+------=_NextPart_000_0000_01C54052.D2EEF9E0--

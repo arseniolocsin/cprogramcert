@@ -1,0 +1,158 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: less17.c.html
+Date: Wed, 25 May 2005 17:11:15 -0700
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://faculty.washington.edu/sproedp/advc/csamples/less17.c.html
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2670
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>less17.c.html</TITLE>
+<META content=3D"MSHTML 6.00.2900.2668" name=3DGENERATOR>
+<META http-equiv=3Dcontent-type content=3D"text/html; =
+charset=3Diso-8859-1"></HEAD>
+<BODY text=3D#c0c0c0 bgColor=3D#000040><PRE><FONT =
+color=3D#80a0ff>/*</FONT><FONT =
+color=3D#80a0ff>*********************************************************=
+********************</FONT>
+<FONT color=3D#80a0ff> * FILE: less17.c</FONT>
+<FONT color=3D#80a0ff> * Description: program illustrating linked list =
+concepts</FONT>
+<FONT color=3D#80a0ff> =
+*************************************************************************=
+****</FONT><FONT color=3D#80a0ff>*/</FONT>
+
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdio.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;string.h&gt;</FONT>
+<FONT color=3D#ff80ff>#include </FONT><FONT =
+color=3D#ffa0a0>&lt;stdlib.h&gt;</FONT>
+
+
+<FONT color=3D#60ff60>typedef</FONT> <FONT color=3D#60ff60>struct</FONT> =
+sup_hero_s
+{
+    <FONT color=3D#60ff60>struct</FONT> sup_hero_s * next;
+    <FONT color=3D#60ff60>const</FONT> <FONT color=3D#60ff60>char</FONT> =
+* name;
+} sup_hero_t, *sup_hero_p_t;
+
+
+
+<FONT color=3D#60ff60>int</FONT> main( <FONT color=3D#60ff60>void</FONT> =
+)
+{
+    sup_hero_p_t head =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+    sup_hero_p_t tail =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+    sup_hero_p_t list_item =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+    sup_hero_p_t found_item =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+
+    <FONT color=3D#60ff60>const</FONT> <FONT color=3D#60ff60>char</FONT> =
+**sup_hero_ptr =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+    <FONT color=3D#60ff60>const</FONT> <FONT color=3D#60ff60>char</FONT> =
+* sup_hero_data[] =3D  { <FONT color=3D#ffa0a0>"Wonder Woman"</FONT>,
+                                      <FONT color=3D#ffa0a0>"Green =
+Lantern"</FONT>,
+                                      <FONT color=3D#ffa0a0>"The =
+Hulk"</FONT>,
+                                      <FONT color=3D#ffa0a0>"Cat =
+Woman"</FONT>,
+                                       <FONT color=3D#ffa0a0>NULL</FONT> =
+};
+
+    printf( <FONT color=3D#ffa0a0>"Create the list </FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT> );
+    <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> cycle the =
+array of pointers to strings </FONT><FONT color=3D#80a0ff>*/</FONT>
+    sup_hero_ptr =3D sup_hero_data;
+    <FONT color=3D#ffff60>while</FONT> ( *sup_hero_ptr )
+    {
+        sup_hero_t * mem_ptr =3D malloc( <FONT =
+color=3D#ffff60>sizeof</FONT>( sup_hero_t ) );
+        mem_ptr-&gt;name =3D *sup_hero_ptr;
+        mem_ptr-&gt;next =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+        <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> if the =
+list is "empty", add to head </FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#ffff60>if</FONT> ( head =3D=3D <FONT =
+color=3D#ffa0a0>NULL</FONT> )
+        {
+            head =3D tail =3D mem_ptr;
+        }
+        <FONT color=3D#80a0ff>/*</FONT><FONT color=3D#80a0ff> otherwise =
+add to tail </FONT><FONT color=3D#80a0ff>*/</FONT>
+        <FONT color=3D#ffff60>else</FONT>
+        {
+            tail-&gt;next =3D mem_ptr;
+            tail =3D tail-&gt;next;
+        }
+        sup_hero_ptr++;
+    }
+
+    puts( <FONT color=3D#ffa0a0>"Cycle the list"</FONT> );
+    list_item =3D head;
+    <FONT color=3D#ffff60>while</FONT> ( list_item )
+    {
+        printf(<FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>\t</FONT><FONT color=3D#ffa500>%s</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, =
+list_item-&gt;name );
+        list_item =3D list_item-&gt;next;
+    }
+
+    printf( <FONT color=3D#ffa0a0>"Remove head from list </FONT><FONT =
+color=3D#ffa500>\"</FONT><FONT color=3D#ffa500>%s</FONT><FONT =
+color=3D#ffa500>\"\n</FONT><FONT color=3D#ffa0a0>"</FONT>, head-&gt;name =
+);
+    list_item =3D head;
+    head =3D head-&gt;next;
+    printf(<FONT color=3D#ffa0a0>"REMOVED </FONT><FONT =
+color=3D#ffa500>%s</FONT><FONT color=3D#ffa500>\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, list_item-&gt;name );
+    free( list_item );
+    list_item =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+
+    puts( <FONT color=3D#ffa0a0>"Cycle the list"</FONT> );
+    list_item =3D head;
+    <FONT color=3D#ffff60>while</FONT> ( list_item )
+    {
+        printf(<FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>\t</FONT><FONT color=3D#ffa500>%s</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, =
+list_item-&gt;name );
+        list_item =3D list_item-&gt;next;
+    }
+
+    list_item =3D head-&gt;next;
+    printf( <FONT color=3D#ffa0a0>"Remove middle item from list =
+</FONT><FONT color=3D#ffa500>\"</FONT><FONT =
+color=3D#ffa500>%s</FONT><FONT color=3D#ffa500>\"\n</FONT><FONT =
+color=3D#ffa0a0>"</FONT>, list_item-&gt;name );
+    head-&gt;next =3D head-&gt;next-&gt;next;
+    free( list_item );
+    puts( <FONT color=3D#ffa0a0>"Cycle the list"</FONT> );
+    list_item =3D head;
+    <FONT color=3D#ffff60>while</FONT> ( list_item )
+    {
+        printf(<FONT color=3D#ffa0a0>"</FONT><FONT =
+color=3D#ffa500>\t</FONT><FONT color=3D#ffa500>%s</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT>, =
+list_item-&gt;name );
+        list_item =3D list_item-&gt;next;
+    }
+
+    printf( <FONT color=3D#ffa0a0>"Destroy the list</FONT><FONT =
+color=3D#ffa500>\n</FONT><FONT color=3D#ffa0a0>"</FONT> );
+    <FONT color=3D#ffff60>while</FONT> ( head )
+    {
+        sup_hero_p_t temp_item =3D head;
+        head =3D head-&gt;next;
+        free( temp_item );
+    }
+    tail =3D <FONT color=3D#ffa0a0>NULL</FONT>;
+}
+
+
+</PRE></BODY></HTML>

@@ -1,0 +1,36 @@
+#
+# The 1990 Zip Code by State file is comma separated values, ASCII text, one record per line. 
+# The field/record layout is as follows:
+#
+#      Field 1 - State Fips Code
+#      Field 2 - 5-digit Zipcode
+#      Field 3 - State Abbreviation
+#      Field 4 - Zipcode Name
+#      Field 5 - Longitude in Decimal Degrees (West is assumed, no minus sign)
+#      Field 6 - Latitude in Decimal Degrees (North is assumed, no plus sign)
+#      Field 7 - 1990 Population (100%)
+#      Field 8 - Allocation Factor (decimal portion of state within zipcode)
+#
+# For complete details see:
+#    http://landview.census.gov/geo/www/gazetteer/places.html
+#
+"01","36026","AL","EQUALITY",86.105064,32.813908,1121,0.000277 
+"04","85539","AZ","MIAMI",110.881182,33.431928,4866,0.001328 
+"06","90024","CA","LOS ANGELES",118.440796,34.063691,38370,0.001289 
+"06","95073","CA","SOQUEL",121.950255,37.003525,8143,0.000274 
+"12","33147","FL","MIAMI",80.236558,25.850675,49395,0.003818 
+"24","20763","MD","SAVAGE",76.821818,39.137962,2227,0.000466 
+"24","21240","MD","BALTIMORE",76.648287,39.17185,1,0 
+"24","21856","MD","QUANTICO",75.785102,38.333888,1029,0.000215 
+"27","55767","MN","MOOSE LAKE",92.746648,46.44724,2699,0.000617 
+"29","63462","MO","PERRY",91.664125,39.420721,1268,0.000248 
+"29","65344","MO","MIAMI",93.19678,39.282095,569,0.000111 
+"35","87729","NM","MIAMI",104.811769,36.28955,65,0.000043 
+"36","10006","NY","NEW YORK",74.013474,40.708451,119,7E-6 
+"36","13834","NY","PORTLANDVILLE",74.976059,42.510303,916,0.000051 
+"40","74354","OK","MIAMI",94.87186,36.876377,16679,0.005302 
+"41","97217","OR","PORTLAND",122.684196,45.57424,29086,0.010233 
+"48","79059","TX","MIAMI",100.702715,35.719301,1025,0.00006 
+"51","22740","VA","SPERRYVILLE",78.246571,38.620252,1553,0.000251 
+"53","98101","WA","SEATTLE",122.330456,47.611435,5801,0.001192 
+"53","99362","WA","WALLA WALLA",118.331544,46.061373,34993,0.00719 
